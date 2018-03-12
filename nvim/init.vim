@@ -123,6 +123,7 @@ Plug 'junegunn/goyo.vim'
 
 " Project Navigation {{{3
 Plug 'scrooloose/nerdtree'
+Plug 'jistr/vim-nerdtree-tabs'
 Plug 'junegunn/fzf',                      { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-grepper'
@@ -149,6 +150,7 @@ Plug 'sgur/vim-textobj-parameter'
 Plug 'jasonlong/vim-textobj-css'
 Plug 'Konfekt/FastFold'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'bronson/vim-trailing-whitespace' 
 
 " Git
 Plug 'tpope/vim-fugitive'                 " Git stuff in Vim
@@ -253,6 +255,21 @@ let g:ranger_replace_netrw = 1 " open ranger when vim open a directory
 " Normal Mode Remaps {{{2
 
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+
+"*****************************************************************************
+"" Abbreviations
+"*****************************************************************************
+"" no one is really happy until you have this shortcuts
+cnoreabbrev W! w!
+cnoreabbrev Q! q!
+cnoreabbrev Qall! qall!
+cnoreabbrev Wq wq
+cnoreabbrev Wa wa
+cnoreabbrev wQ wq
+cnoreabbrev WQ wq
+cnoreabbrev W w
+cnoreabbrev Q q
+cnoreabbrev Qall qall
 
 " Smarter pasting
 nnoremap <Leader>p :set invpaste paste?<CR>
