@@ -106,6 +106,15 @@ _git-delete-tag() { compadd "$@" $(git tag) }
 export DISABLE_AUTO_TITLE="true"
 alias tmux="tmux -2"
 
+if [[ -z "$TMUX" ]] ;then                                                                                                                                                                                          
+  ID="`tmux ls | cut -d: -f1`" # get the id of a deattached session                                                                                                                                                
+  if [[ -z "$ID" ]] ;then # if not available create a new one                                                                                                                                                      
+    tmux -u new-session                                                                                                                                                                                            
+  else                                                                                                                                                                                                             
+    tmux -u attach-session -t "$ID" # if available attach to it                                                                                                                                                    
+  fi                                                                                                                                                                                                               
+fi
+
 # -- TheFuck -------------------------------------------------------------------
 #    https://github.com/nvbn/thefuck
 alias fuck='$(thefuck $(fc -ln -1))'
