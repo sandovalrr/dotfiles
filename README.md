@@ -7,7 +7,7 @@ Dotfile configuration. Covers Neovim, TMUX, Git, ZSH, yarn.
 1.  Pull the project into your home directory
 
     ```bash
-    git clone https://github.com/alexlafroscia/dotfiles.git ~/.dotfiles
+    git clone https://github.com/richardsandoval/rs-dotfiles.git ~/.dotfiles
     git submodule update --init --recursive
     ```
 
