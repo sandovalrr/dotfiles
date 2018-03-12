@@ -122,6 +122,7 @@ Plug 'ryanoasis/vim-webdevicons'
 Plug 'junegunn/goyo.vim'
 
 " Project Navigation {{{3
+Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf',                      { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-grepper'
