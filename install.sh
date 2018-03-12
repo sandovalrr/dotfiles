@@ -95,7 +95,8 @@ else
   if get_boolean_response "Do you want to install Node.js tools?"; then
     git clone https://github.com/creationix/nvm.git ~/.nvm && cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`
     . $HOME/.nvm/nvm.sh
-    nvm alias default system
+    #nvm alias default system
+    nvm install --lts
   else
     echo_item "Skipping Node.js tools install" red
   fi
@@ -106,7 +107,6 @@ echo ""
 # -- NEOVIM --------------------------------------------------------------------
 # Link the dotfiles
 
-# TODO: Ask if the user wants to copy the current configuration to a .local file
 if get_boolean_response "Do you want to install the Neoim configuration file?"
 then
   ln -sf $HOME/.dotfiles/nvim/init.vim $HOME/.config/nvim/init.vim
