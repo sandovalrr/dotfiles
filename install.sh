@@ -92,11 +92,12 @@ echo ""
 if exists "nvm"; then
   echo_item "Node tools are already installed" green
 else
-  if get_boolean_response "Do you want to install Node.js tools?"; then
+  if get_boolean_response "Do you want to install Node Version Manager?"; then
     git clone https://github.com/creationix/nvm.git ~/.nvm && cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`
     . $HOME/.nvm/nvm.sh
     #nvm alias default system
     nvm install --lts
+    npm install -g yarn
   else
     echo_item "Skipping Node.js tools install" red
   fi
@@ -107,7 +108,7 @@ echo ""
 # -- NEOVIM --------------------------------------------------------------------
 # Link the dotfiles
 
-if get_boolean_response "Do you want to install the Neoim configuration file?"
+if get_boolean_response "Do you want to install the Neovim configuration file?"
 then
   ln -sf $HOME/.dotfiles/nvim/init.vim $HOME/.config/nvim/init.vim
   echo_item "Linked Neovim configuration" "green"
@@ -116,3 +117,17 @@ else
 fi
 
 echo ""
+
+
+# -- GCloud --------------------------------------------------------------------
+
+if exists "gcloud"; then
+  echo_item "GCloud is already installed" green
+else 
+  if get_boolean_response "Do you want to install GCloud"; then
+    curl https://sdk.cloud.google.com | bash
+    echo_item "GCloud Installed" "green" 
+  else
+    echo_item "Skipping GCloud install" red
+  fi
+fi

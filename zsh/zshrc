@@ -17,7 +17,7 @@ fpath=( "$DOTFILES/zsh/custom" $fpath)
 
 # -- Theme ---------------------------------------------------------------------
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
-ZSH_THEME="pure"
+ZSH_THEME="bureau"
 
 # -- ZSH Plugins ---------------------------------------------------------------
 plugins=(git tmux npm bower vi-mode pj zsh-syntax-highlighting)
@@ -45,8 +45,8 @@ export HISTSIZE=500
 export SAVEHIST=500
 
 # -- Options -------------------------------------------------------------------
-unsetopt correct_all
-unsetopt correct
+# unsetopt correct_all
+# unsetopt correct
 
 # -- Variables -----------------------------------------------------------------
 export EDITOR="$(brew --prefix)/bin/nvim"
@@ -107,13 +107,13 @@ export DISABLE_AUTO_TITLE="true"
 alias tmux="tmux -2"
 
 # single instance tmux
-if [[ -z "$TMUX" ]] ;then                                                                                                                                                                                          
-  ID="`tmux ls | cut -d: -f1`" # get the id of a deattached session                                                                                                                                                
-  if [[ -z "$ID" ]] ;then # if not available create a new one                                                                                                                                                      
-    tmux -u new-session                                                                                                                                                                                            
-  else                                                                                                                                                                                                             
-    tmux -u attach-session -t "$ID" # if available attach to it                                                                                                                                                    
-  fi                                                                                                                                                                                                               
+if [[ -z "$TMUX" ]] ;then
+  ID="`tmux ls | cut -d: -f1`" # get the id of a deattached session
+  if [[ -z "$ID" ]] ;then # if not available create a new one
+    tmux -u new-session
+  else
+    tmux -u attach-session -t "$ID" # if available attach to it
+  fi
 fi
 
 # -- TheFuck -------------------------------------------------------------------
