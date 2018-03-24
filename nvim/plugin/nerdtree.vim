@@ -1,12 +1,12 @@
 let g:NERDTreeHijackNetrw=0
 augroup NERDTreeHijackNetrw
-  autocmd VimEnter * silent! autocmd! FileExplorer 
+  autocmd VimEnter * silent! autocmd! FileExplorer
 augroup END
 
 let NERDTreeQuitOnOpen=1
 let NERDTreeShowHidden=1
 :nnoremap <C-g> :NERDTreeToggle<CR>
-autocmd BufEnter * lcd %:p:h 
+autocmd BufEnter * lcd %:p:h
 
 "" NERDTree configuration
 let g:NERDTreeChDirMode=2
@@ -18,4 +18,6 @@ let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
 let g:NERDTreeWinSize = 50
 let NERDTreeShowHidden=1
 
+
+let g:webdevicons_enable_nerdtree = 1
 

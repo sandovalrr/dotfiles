@@ -118,7 +118,7 @@ Plug 'trevordmiller/nova-vim'
 Plug 'vim-airline/vim-airline'            " Handy info
 Plug 'retorillo/airline-tablemode.vim'
 Plug 'edkolev/tmuxline.vim'               " Make the Tmux bar match Vim
-Plug 'ryanoasis/vim-webdevicons'
+Plug 'ryanoasis/vim-devicons'
 Plug 'junegunn/goyo.vim'
 
 " Project Navigation {{{3
@@ -150,7 +150,7 @@ Plug 'sgur/vim-textobj-parameter'
 Plug 'jasonlong/vim-textobj-css'
 Plug 'Konfekt/FastFold'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'bronson/vim-trailing-whitespace' 
+Plug 'bronson/vim-trailing-whitespace'
 
 " Git
 Plug 'tpope/vim-fugitive'                 " Git stuff in Vim
