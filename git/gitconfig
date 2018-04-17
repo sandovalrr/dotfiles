@@ -3,6 +3,9 @@
   email = rsandoval@crestviewc.com
   name = Richard Sandoval
 
+[core]
+  editor = 'nvim'
+
 [alias]
   # Add
   aa = add --all

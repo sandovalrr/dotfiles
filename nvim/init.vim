@@ -115,6 +115,7 @@ call plug#begin()
 
 " UI {{{3
 Plug 'trevordmiller/nova-vim'
+Plug 'ayu-theme/ayu-vim'
 Plug 'vim-airline/vim-airline'            " Handy info
 Plug 'retorillo/airline-tablemode.vim'
 Plug 'edkolev/tmuxline.vim'               " Make the Tmux bar match Vim
@@ -313,6 +314,7 @@ set completeopt-=preview
 
 syntax enable
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+let ayucolor="dark"
 set termguicolors
 set background=dark
 colorscheme nova
@@ -358,3 +360,28 @@ if filereadable($DOTFILES . "/nvim/init.local.vim")
   source $DOTFILES/nvim/init.local.vim
 endif
 " }}}
+"
+"
+let g:NERDTreeHijackNetrw=0
+augroup NERDTreeHijackNetrw
+  autocmd VimEnter * silent! autocmd! FileExplorer
+augroup END
+
+let NERDTreeQuitOnOpen=1
+let NERDTreeShowHidden=1
+:nnoremap <C-g> :NERDTreeToggle<CR>
+autocmd BufEnter * lcd %:p:h
+
+"" NERDTree configuration
+let g:NERDTreeChDirMode=2
+let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__']
+let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
+let g:NERDTreeShowBookmarks=1
+let g:nerdtree_tabs_focus_on_files=1
+let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
+let g:NERDTreeWinSize = 50
+let NERDTreeShowHidden=1
+
+
+let g:webdevicons_enable_nerdtree = 1
+

@@ -8,7 +8,7 @@ let g:deoplete#ignore_sources.python = ['member']
 " Map `<tab>` to Deoplete
 inoremap <silent><expr> <TAB>
   \ pumvisible()
-  \ ? "\<C-n>"
+  \ ? "\<C-o>"
   \ : <SID>check_back_space()
      \ ? "\<TAB>"
      \ : deoplete#mappings#manual_complete()
