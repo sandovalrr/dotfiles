@@ -116,6 +116,7 @@ call plug#begin()
 " UI {{{3
 Plug 'trevordmiller/nova-vim'
 Plug 'ayu-theme/ayu-vim'
+Plug 'mhartington/oceanic-next'
 Plug 'vim-airline/vim-airline'            " Handy info
 Plug 'retorillo/airline-tablemode.vim'
 Plug 'edkolev/tmuxline.vim'               " Make the Tmux bar match Vim
@@ -314,10 +315,18 @@ set completeopt-=preview
 
 syntax enable
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-let ayucolor="dark"
-set termguicolors
-set background=dark
-colorscheme nova
+" let ayucolor="dark"
+" set termguicolors
+" set background=dark
+" colorscheme nova
+" Or if you have Neovim >= 0.1.5
+if (has("termguicolors"))
+ set termguicolors
+endif
+
+" Theme
+syntax enable
+colorscheme OceanicNext
 
 " Setup Terminal Colors For Neovim {{{
 if has('nvim')
