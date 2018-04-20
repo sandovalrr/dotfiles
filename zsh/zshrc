@@ -20,7 +20,7 @@ export NVIM_TUI_ENABLE_TRUE_COLOR=1
 ZSH_THEME="bureau"
 
 # -- ZSH Plugins ---------------------------------------------------------------
-plugins=(git tmux npm bower vi-mode pj zsh-syntax-highlighting)
+plugins=(git tmux npm bower pj zsh-syntax-highlighting nvm yarn)
 if exists "virtualenvwrapper"; then plugins+=virtualenvwrapper; fi
 
 fpath=($DOTFILES/zsh/custom/completion $fpath)
@@ -33,7 +33,7 @@ fi
 
 # -- Oh My Zsh -----------------------------------------------------------------
 source $ZSH/oh-my-zsh.sh
-
+#
 # -- Named Directories ---------------------------------------------------------
 unsetopt auto_name_dirs
 
@@ -140,7 +140,7 @@ fi
 # -- OS-Specific Config --------------------------------------------------------
 if [[ $(uname) == 'Darwin' ]]; then
   # Load OSX config
-  source $DOTFILES/zsh/zshrc.osx
+   source $DOTFILES/zsh/zshrc.osx
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
   # Load Linux config
 fi
@@ -172,3 +172,9 @@ fi
 if [[ -f "$DOTFILES/zsh/zshrc.local" ]]; then
   source $DOTFILES/zsh/zshrc.local
 fi
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/rs-dev/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/rs-dev/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/rs-dev/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/rs-dev/google-cloud-sdk/completion.zsh.inc'; fi

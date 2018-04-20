@@ -1,5 +1,7 @@
 " Section: General Config {{{1
 " ----------------------------
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
 let mapleader = " "
 let &runtimepath .= "," . $DOTFILES . "/nvim"  " Add DOTFILES to runtimepath
 let &packpath .= "," . $DOTFILES . "/nvim"
@@ -51,8 +53,10 @@ set splitbelow
 set splitright
 " }}}2
 " Point to the Python executables in `asdf` {{{2
-let g:python_host_prog = $HOME . '/.asdf/installs/python/2.7.10/bin/python'
-let g:python3_host_prog = $HOME . '/.asdf/installs/python/3.5.0/bin/python'
+let g:python_host_prog  = '/usr/local/bin/python'
+let g:python3_host_prog = '/usr/local/bin/python3'
+
+
 " }}}2
 " Configure grep to use The Silver Searcher {{{2
 if executable('ag')
@@ -134,14 +138,7 @@ Plug 'majutsushi/tagbar'
 Plug 'rbgrouleff/bclose.vim'              " Required by ranger.vim
 Plug 'francoiscabrol/ranger.vim'
 
-" File Navigation {{{3
-Plug 'vim-scripts/matchit.zip'            " More powerful % matching
-Plug 'Lokaltog/vim-easymotion'            " Move like the wind!
-Plug 'jeffkreeftmeijer/vim-numbertoggle'  " Smarter line numbers
-Plug 'wellle/targets.vim'
-Plug 'kshenoy/vim-signature'
-Plug 'haya14busa/incsearch.vim'           " Better search highlighting
-
+"
 " Editing {{{3
 Plug 'tpope/vim-surround'                 " Change word surroundings
 Plug 'tpope/vim-commentary'               " Comments stuff
@@ -153,6 +150,7 @@ Plug 'jasonlong/vim-textobj-css'
 Plug 'Konfekt/FastFold'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'bronson/vim-trailing-whitespace'
+Plug 'lifepillar/pgsql.vim'
 
 " Git
 Plug 'tpope/vim-fugitive'                 " Git stuff in Vim
@@ -206,7 +204,7 @@ Plug 'vim-ruby/vim-ruby',                 { 'for': 'ruby' }
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-endwise'
-
+:
 " Python {{{4
 Plug 'klen/python-mode',                  { 'for': 'python' }
 Plug 'davidhalter/jedi-vim',              { 'for': 'python' }
@@ -391,6 +389,4 @@ let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
 let g:NERDTreeWinSize = 50
 let NERDTreeShowHidden=1
 
-
 let g:webdevicons_enable_nerdtree = 1
-
