@@ -94,12 +94,6 @@ if has("autocmd")
 
   au! BufRead,BufNewFile *.tsx       setfiletype typescript
 
-  let g:prettier#autoformat = 0
-  autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
-
-  let g:fixmyjs_engine = 'tslint'
-	autocmd BufWritePost *.tsx Fixmyjs
-
 endif
 " }}}1
 " Section: External Functions {{{
@@ -380,6 +374,8 @@ endif
 " }}}
 "
 "
+
+" Section: General Configs  {{{
 let g:NERDTreeHijackNetrw=0
 augroup NERDTreeHijackNetrw
   autocmd VimEnter * silent! autocmd! FileExplorer
@@ -402,3 +398,18 @@ let NERDTreeShowHidden=1
 
 let g:tsuquyomi_completion_detail = 1
 let g:webdevicons_enable_nerdtree = 1
+
+let g:prettier#config#print_width = 100
+let g:prettier#config#semi = 'true'
+let g:prettier#config#single_quote = 'true'
+let g:prettier#config#bracket_spacing = 'true'
+let g:prettier#config#jsx_bracket_same_line = 'true'
+
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue Prettier
+
+let g:fixmyjs_engine = 'tslint'
+autocmd BufWritePost *.tsx Fixmyjs
+
+" }}}
+
