@@ -3,7 +3,7 @@
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 let mapleader = " "
-let &runtimepath .= "," . $DOTFILES . "/nvim"  " Add DOTFILES to runtimepath
+" let &runtimepath .= "," . $DOTFILES . "/nvim"  " Add DOTFILES to runtimepath
 let &packpath .= "," . $DOTFILES . "/nvim"
 
 set shell=zsh " Set bash as the prompt for Vim
@@ -53,8 +53,8 @@ set splitbelow
 set splitright
 " }}}2
 " Point to the Python executables in `asdf` {{{2
-let g:python_host_prog  = '/usr/local/bin/python'
-let g:python3_host_prog = '/usr/local/bin/python3'
+let g:python_host_prog  = '/usr/bin/python'
+let g:python3_host_prog = '/usr/bin/python3'
 
 
 " }}}2
@@ -93,6 +93,13 @@ if has("autocmd")
   autocmd BufRead,BufNewFile gitconfig set ft=.gitconfig
 
   au! BufRead,BufNewFile *.tsx       setfiletype typescript
+
+  let g:prettier#autoformat = 0
+  autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
+
+  let g:fixmyjs_engine = 'tslint'
+	autocmd BufWritePost *.tsx Fixmyjs
+
 endif
 " }}}1
 " Section: External Functions {{{
@@ -165,12 +172,16 @@ Plug 'wincent/terminus'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'Olical/vim-enmasse'                 " Edit all files in a Quickfix list
 Plug 'janko-m/vim-test'
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue'] }
+Plug 'ruanyl/vim-fixmyjs'
+
+
 
 " Autocomplete {{{3
-Plug 'Shougo/deoplete.nvim',              { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-jedi'
-Plug 'carlitux/deoplete-ternjs'
-Plug 'alexlafroscia/deoplete-flow',       { 'branch': 'pass-filename-to-autocomplete' }
+Plug 'Quramy/tsuquyomi'
 
 " Language Support {{{3
 " JavaScript {{{4
@@ -183,7 +194,7 @@ Plug 'neovim/node-host',                  { 'do': 'npm install' }
 
 " TypeScript {{{4
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'mhartington/nvim-typescript',       { 'do': ':UpdateRemotePlugins' }
+" Plug 'mhartington/nvim-typescript',       { 'do': ':UpdateRemotePlugins' }
 
 " Elm {{{4
 Plug 'ElmCast/elm-vim'
@@ -389,4 +400,5 @@ let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
 let g:NERDTreeWinSize = 50
 let NERDTreeShowHidden=1
 
+let g:tsuquyomi_completion_detail = 1
 let g:webdevicons_enable_nerdtree = 1
