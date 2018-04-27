@@ -138,6 +138,8 @@ Plug 'vim-scripts/ctags.vim'              " ctags related stuff
 Plug 'majutsushi/tagbar'
 Plug 'rbgrouleff/bclose.vim'              " Required by ranger.vim
 Plug 'francoiscabrol/ranger.vim'
+Plug 'haya14busa/incsearch.vim'
+
 
 "
 " Editing {{{3
