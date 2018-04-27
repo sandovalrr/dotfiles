@@ -3,7 +3,7 @@
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 let mapleader = " "
-" let &runtimepath .= "," . $DOTFILES . "/nvim"  " Add DOTFILES to runtimepath
+let &runtimepath .= "," . $DOTFILES . "/nvim"  " Add DOTFILES to runtimepath
 let &packpath .= "," . $DOTFILES . "/nvim"
 
 set shell=zsh " Set bash as the prompt for Vim
