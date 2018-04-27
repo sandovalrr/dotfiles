@@ -53,8 +53,8 @@ set splitbelow
 set splitright
 " }}}2
 " Point to the Python executables in `asdf` {{{2
-let g:python_host_prog  = '/usr/bin/python'
-let g:python3_host_prog = '/usr/bin/python3'
+let g:python_host_prog  = '/usr/local/bin/python'
+let g:python3_host_prog = '/usr/local/bin/python3'
 
 
 " }}}2
@@ -138,8 +138,13 @@ Plug 'vim-scripts/ctags.vim'              " ctags related stuff
 Plug 'majutsushi/tagbar'
 Plug 'rbgrouleff/bclose.vim'              " Required by ranger.vim
 Plug 'francoiscabrol/ranger.vim'
-Plug 'haya14busa/incsearch.vim'
 
+" File Navigation {{{3
+Plug 'vim-scripts/matchit.zip'            " More powerful % matching
+Plug 'Lokaltog/vim-easymotion'            " Move like the wind!
+Plug 'jeffkreeftmeijer/vim-numbertoggle'  " Smarter line numbers
+Plug 'kshenoy/vim-signature'              " Show marks in the gutter
+Plug 'haya14busa/incsearch.vim'           " Better search highlighting
 
 "
 " Editing {{{3
@@ -173,8 +178,6 @@ Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue'] }
 Plug 'ruanyl/vim-fixmyjs'
-
-
 
 " Autocomplete {{{3
 Plug 'Quramy/tsuquyomi'
@@ -374,9 +377,6 @@ if filereadable($DOTFILES . "/nvim/init.local.vim")
   source $DOTFILES/nvim/init.local.vim
 endif
 " }}}
-"
-"
-
 " Section: General Configs  {{{
 let g:NERDTreeHijackNetrw=0
 augroup NERDTreeHijackNetrw
@@ -401,17 +401,19 @@ let NERDTreeShowHidden=1
 let g:tsuquyomi_completion_detail = 1
 let g:webdevicons_enable_nerdtree = 1
 
-let g:prettier#config#print_width = 100
+let g:prettier#config#print_width = 70
 let g:prettier#config#semi = 'true'
 let g:prettier#config#single_quote = 'true'
 let g:prettier#config#bracket_spacing = 'true'
 let g:prettier#config#jsx_bracket_same_line = 'true'
 
 let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue Prettier
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
+
 
 let g:fixmyjs_engine = 'tslint'
 autocmd BufWritePost *.tsx Fixmyjs
+
 
 " }}}
 
