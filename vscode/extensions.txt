@@ -1,0 +1,11 @@
+christian-kohler.npm-intellisense
+eamodio.gitlens
+eg2.tslint
+esbenp.prettier-vscode
+liviuschera.noctis
+ms-vscode.Go
+Orta.vscode-jest
+PKief.material-icon-theme
+vscodevim.vim
+yzhang.markdown-all-in-one
+
