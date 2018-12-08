@@ -134,6 +134,8 @@ Plug 'retorillo/airline-tablemode.vim'
 Plug 'edkolev/tmuxline.vim'               " Make the Tmux bar match Vim
 Plug 'ryanoasis/vim-devicons'
 Plug 'junegunn/goyo.vim'
+Plug 'kristijanhusak/vim-hybrid-material'
+
 
 " Project Navigation {{{3
 Plug 'scrooloose/nerdtree'
@@ -328,20 +330,23 @@ set completeopt-=preview
 " }}}1
 " Section: Theme {{{
 
-syntax enable
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+" let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 " let ayucolor="dark"
 " set termguicolors
-" set background=dark
+set background=dark
 " colorscheme nova
 " Or if you have Neovim >= 0.1.5
-if (has("termguicolors"))
- set termguicolors
-endif
+"if (has("termguicolors"))
+" set termguicolors
+" endif
 
 " Theme
 syntax enable
-colorscheme OceanicNext
+" let g:oceanic_next_terminal_bold = 1
+" let g:oceanic_next_terminal_italic = 1
+colorscheme hybrid_material
+let g:enable_bold_font = 1
+let g:enable_italic_font = 1
 
 " Setup Terminal Colors For Neovim {{{
 if has('nvim')
@@ -408,11 +413,15 @@ let NERDTreeShowHidden=1
 let g:tsuquyomi_completion_detail = 1
 let g:webdevicons_enable_nerdtree = 1
 
-let g:prettier#config#print_width = 70
+let g:prettier#config#print_width = 85
 let g:prettier#config#semi = 'true'
+let g:prettier#exec_cmd_async = 1
+let g:prettier#config#use_tabs = 'false'
 let g:prettier#config#single_quote = 'true'
 let g:prettier#config#bracket_spacing = 'true'
-let g:prettier#config#jsx_bracket_same_line = 'true'
+let g:prettier#config#jsx_bracket_same_line = 'false'
+let g:prettier#config#jsx_single_quote = 'true'
+let g:prettier#config#config_precedence = 'prefer-file'
 
 let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync

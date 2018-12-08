@@ -123,10 +123,6 @@
   separator = red bold
   linenumber = normal
 
-[pull]
-  ff = only
-  rebase = true
-
 [push]
   # 'git push' will push the current branch to its tracking branch
   # the usual default is to push all branches
@@ -158,9 +154,3 @@
   clean = git-lfs clean %f
   smudge = git-lfs smudge %f
   required = true
-
-[github]
-  user = alexlafroscia
-
-[credential]
-  helper = osxkeychain
