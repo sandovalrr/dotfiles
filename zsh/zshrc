@@ -1,3 +1,5 @@
+source ~/.bash_profile
+
 # -- Dotfiles Directory --------------------------------------------------------
 export XDG_CONFIG_HOME="$HOME/.config"
 export DOTFILES="$HOME/.dotfiles"
@@ -173,15 +175,7 @@ if [[ -f "$DOTFILES/zsh/zshrc.local" ]]; then
   source $DOTFILES/zsh/zshrc.local
 fi
 
-export PGHOST=localhost
-export PGUSER=dadmin
-export PGPASSWORD='d@dm!n'
-export PGDATABASE=nadb
-export SCHEMA='seligibility'
-export POSTGRES_CONN_STRING='postgres://dadmin:d@dm!n@127.0.0.1/nadb?sslmode=disable'
-export POSTGRES_CONN_STRING_PROD='postgres://dadmin:d@dm!n@127.0.0.1:1234/nadb?sslmode=disable'
-export PERMISSIONS_USE_DEFAULT=false
-export PERMISSIONS_URL='https://scl-pharm-dev.tredium.com/api/permissions_host/user/auth'
+
 # GoLang
 export GOROOT=$HOME/.go
 export PATH=$PATH:$GOROOT/bin
@@ -202,7 +196,6 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
 
-export ANDROID_HOME=~/Desktop/backup/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
