@@ -25,9 +25,9 @@
   "window.zoomLevel": 0,
   "workbench.activityBar.visible": false,
   "workbench.colorCustomizations": {
-    "statusBar.background": "#5f0000",
-    "statusBar.noFolderBackground": "#5f0000",
-    "statusBar.debuggingBackground": "#5f0000"
+    "statusBar.background": "#005f5f",
+    "statusBar.noFolderBackground": "#005f5f",
+    "statusBar.debuggingBackground": "#005f5f"
   },
   "workbench.colorTheme": "Noctis",
   "workbench.iconTheme": "material-icon-theme",
@@ -35,5 +35,6 @@
   "workbench.statusBar.visible": true,
   "zenMode.hideStatusBar": false,
   "tslint.run": "onSave",
-  "tslint.alwaysShowStatus": true
+  "tslint.alwaysShowStatus": true,
+  "editor.renderWhitespace": "all"
 }
