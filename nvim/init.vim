@@ -159,6 +159,7 @@ Plug 'Konfekt/FastFold'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'lifepillar/pgsql.vim'
+Plug 'chrisbra/Colorizer'
 
 " Git
 Plug 'tpope/vim-fugitive'                 " Git stuff in Vim
@@ -384,7 +385,6 @@ augroup NERDTreeHijackNetrw
 augroup END
 
 let NERDTreeQuitOnOpen=1
-let NERDTreeShowHidden=1
 :nnoremap <C-g> :NERDTreeToggle<CR>
 autocmd BufEnter * lcd %:p:h
 
@@ -401,11 +401,12 @@ let NERDTreeShowHidden=1
 let g:tsuquyomi_completion_detail = 1
 let g:webdevicons_enable_nerdtree = 1
 
-let g:prettier#config#print_width = 70
+let g:prettier#config#print_width = 80
+let g:prettier#config#use_tabs = 'false'
 let g:prettier#config#semi = 'true'
 let g:prettier#config#single_quote = 'true'
 let g:prettier#config#bracket_spacing = 'true'
-let g:prettier#config#jsx_bracket_same_line = 'true'
+let g:prettier#config#jsx_bracket_same_line = 'false'
 
 let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
@@ -416,4 +417,3 @@ autocmd BufWritePost *.tsx Fixmyjs
 
 
 " }}}
-

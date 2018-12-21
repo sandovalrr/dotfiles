@@ -20,7 +20,7 @@ export NVIM_TUI_ENABLE_TRUE_COLOR=1
 ZSH_THEME="bureau"
 
 # -- ZSH Plugins ---------------------------------------------------------------
-plugins=(git tmux npm bower pj zsh-syntax-highlighting nvm yarn)
+plugins=(git tmux npm bower pj zsh-syntax-highlighting nvm yarn aws)
 if exists "virtualenvwrapper"; then plugins+=virtualenvwrapper; fi
 
 fpath=($DOTFILES/zsh/custom/completion $fpath)
@@ -173,18 +173,15 @@ if [[ -f "$DOTFILES/zsh/zshrc.local" ]]; then
   source $DOTFILES/zsh/zshrc.local
 fi
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/rs-dev/google-cloud-sdk/path.zsh.inc' ]; then source '/home/rs-dev/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/rs-dev/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/rs-dev/google-cloud-sdk/completion.zsh.inc'; fi
-
 export PGHOST=localhost
 export PGUSER=dadmin
 export PGPASSWORD='d@dm!n'
 export PGDATABASE=nadb
 export SCHEMA='seligibility'
 export POSTGRES_CONN_STRING='postgres://dadmin:d@dm!n@127.0.0.1/nadb?sslmode=disable'
+export PERMISSIONS_USE_DEFAULT=false
+export PERMISSIONS_URL='https://scl-pharm-dev.tredium.com/api/permissions_host/user/auth'
+
 # GoLang
 export GOROOT=$HOME/.go
 export PATH=$PATH:$GOROOT/bin
@@ -192,3 +189,20 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
 export PATH=$PATH:/home/rs-dev/.yarn/bin
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/rs-dev/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/rs-dev/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/rs-dev/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/rs-dev/google-cloud-sdk/completion.zsh.inc'; fi
+# GoLang
+export GOROOT=$HOME/.go
+export PATH=$PATH:$GOROOT/bin
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
+
+export ANDROID_HOME=~/Desktop/backup/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
