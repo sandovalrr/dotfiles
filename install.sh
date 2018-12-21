@@ -123,10 +123,10 @@ echo ""
 
 if exists "gcloud"; then
   echo_item "GCloud is already installed" green
-else 
+else
   if get_boolean_response "Do you want to install GCloud"; then
     curl https://sdk.cloud.google.com | bash
-    echo_item "GCloud Installed" "green" 
+    echo_item "GCloud Installed" "green"
   else
     echo_item "Skipping GCloud install" red
   fi

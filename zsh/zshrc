@@ -179,9 +179,9 @@ export PGPASSWORD='d@dm!n'
 export PGDATABASE=nadb
 export SCHEMA='seligibility'
 export POSTGRES_CONN_STRING='postgres://dadmin:d@dm!n@127.0.0.1/nadb?sslmode=disable'
+export POSTGRES_CONN_STRING_PROD='postgres://dadmin:d@dm!n@127.0.0.1:1234/nadb?sslmode=disable'
 export PERMISSIONS_USE_DEFAULT=false
 export PERMISSIONS_URL='https://scl-pharm-dev.tredium.com/api/permissions_host/user/auth'
-
 # GoLang
 export GOROOT=$HOME/.go
 export PATH=$PATH:$GOROOT/bin
