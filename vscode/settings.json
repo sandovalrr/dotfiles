@@ -12,5 +12,12 @@
   "prettier.jsxSingleQuote": true,
   "prettier.singleQuote": true,
   "prettier.tslintIntegration": true,
-  "editor.lineNumbers": "relative"
+  "editor.lineNumbers": "relative",
+  "editor.tabSize": 2,
+  "editor.renderWhitespace": "all",
+  "editor.cursorStyle": "underline-thin",
+  "vim.enableNeovim": true,
+  "vim.useSystemClipboard": true,
+  "vim.statusBarColorControl": true,
+  "editor.fontWeight": "100"
 }
