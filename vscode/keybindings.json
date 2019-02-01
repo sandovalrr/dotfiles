@@ -56,5 +56,13 @@
   {
     "key": "ctrl+space",
     "command": "tslint.fixAllProblems"
+  },
+  {
+    "key": "ctrl+'",
+    "command": "workbench.action.togglePanel"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "-workbench.action.togglePanel"
   }
 ]
