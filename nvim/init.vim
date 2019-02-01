@@ -168,6 +168,7 @@ Plug 'Konfekt/FastFold'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'lifepillar/pgsql.vim'
+Plug 'chrisbra/Colorizer'
 
 " Git
 Plug 'tpope/vim-fugitive'                 " Git stuff in Vim
@@ -396,7 +397,6 @@ augroup NERDTreeHijackNetrw
 augroup END
 
 let NERDTreeQuitOnOpen=1
-let NERDTreeShowHidden=1
 :nnoremap <C-g> :NERDTreeToggle<CR>
 autocmd BufEnter * lcd %:p:h
 

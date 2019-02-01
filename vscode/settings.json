@@ -37,16 +37,16 @@
   "zenMode.hideStatusBar": false,
   "tslint.run": "onSave",
   "tslint.alwaysShowStatus": true,
-  "editor.renderWhitespace": "boundary",
   "editor.wordWrap": "on",
   "editor.minimap.enabled": false,
   "jest.debugMode": true,
   "vim.foldfix": true,
   "vim.ignorecase": false,
   "vim.sneakUseIgnorecaseAndSmartcase": true,
-  "vim.enableNeovim": true,
   "eslint.autoFixOnSave": true,
   "tslint.validateWithDefaultConfig": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "vim.neovimPath": "/usr/bin/nvim"
+  "vim.neovimPath": "/usr/bin/nvim",
+  "editor.renderWhitespace": "all",
+  "vim.enableNeovim": true
 }

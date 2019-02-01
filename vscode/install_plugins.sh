@@ -1,7 +1,6 @@
 #!/bin/bash
-
-EXTENSIONS_FILE="$(dirname "$(realpath "${BASH_SOURCE[0]}")")/extensions.txt"
-
+# EXTENSIONS_FILE="$(dirname "$(realpath "${BASH_SOURCE[0]}")")/extensions.txt"
+EXTENSIONS_FILE="vscode/extensions.txt"
 
 extensions="$(cat "$EXTENSIONS_FILE")"
 

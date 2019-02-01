@@ -131,17 +131,3 @@ else
     echo_item "Skipping GCloud install" red
   fi
 fi
-
-# -- VSCODE -----------------------------------------------------------------------
-
-if get_boolean_response "Do you want to install VS Code configuration files?"
-then
-
-  source 'vscode/install_plugins.sh'
-
-  ln -sf $HOME/.dotfiles/vscode/keybindings.json $HOME/.config/Code/User/keybindings.json
-  ln -sf $HOME/.dotfiles/vscode/settings.json $HOME/.config/Code/User/settings.json
-else
-  echo_item "Ignoring VS Code configuration"
-fi
-
