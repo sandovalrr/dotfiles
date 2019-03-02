@@ -146,6 +146,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'junegunn/fzf',                      { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mhinz/vim-grepper'
 Plug 'vim-scripts/ctags.vim'              " ctags related stuff
 Plug 'majutsushi/tagbar'
@@ -325,7 +326,7 @@ nnoremap tn :tabnew<CR>
 nnoremap tc :CtrlSpaceTabLabel<CR>
 nnoremap td :tabclose<CR>
 
-nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
+" nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
 
 " }}}2
 " Insert Mode Remaps {{{2
