@@ -27,6 +27,9 @@ set scrolloff=3
 set list listchars=tab:»·,trail:·  " Display extra whitespace characters
 set hidden
 set inccommand=nosplit
+set clipboard=unnamedplus
+
+
 
 " Line numbers
 set number
@@ -99,7 +102,8 @@ if has("autocmd")
 
   autocmd BufRead,BufNewFile gitconfig set ft=.gitconfig
 
-  au! BufRead,BufNewFile *.tsx       setfiletype typescript
+	autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
+  au BufNewFile,BufRead *.ts set filetype=typescript
 
 endif
 " }}}1
@@ -169,6 +173,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'lifepillar/pgsql.vim'
 Plug 'chrisbra/Colorizer'
+Plug 'terryma/vim-multiple-cursors'
 
 " Git
 Plug 'tpope/vim-fugitive'                 " Git stuff in Vim
@@ -184,10 +189,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'Olical/vim-enmasse'                 " Edit all files in a Quickfix list
 Plug 'janko-m/vim-test'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue'] }
-Plug 'ruanyl/vim-fixmyjs'
+
 
 " Autocomplete {{{3
 Plug 'Quramy/tsuquyomi'
@@ -202,7 +204,10 @@ Plug 'AndrewRadev/ember_tools.vim'
 Plug 'neovim/node-host',                  { 'do': 'npm install' }
 
 " TypeScript {{{4
-Plug 'HerringtonDarkholme/yats.vim'
+" Plug 'HerringtonDarkholme/yats.vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+" Plug 'heavenshell/vim-tslint'
 " Plug 'mhartington/nvim-typescript',       { 'do': ':UpdateRemotePlugins' }
 
 " Elm {{{4
@@ -337,52 +342,56 @@ set completeopt-=preview
 set background=dark
 " colorscheme nova
 " Or if you have Neovim >= 0.1.5
-"if (has("termguicolors"))
-" set termguicolors
-" endif
+if (has("termguicolors"))
+  set termguicolors
+endif
 
 " Theme
-syntax enable
-" let g:oceanic_next_terminal_bold = 1
-" let g:oceanic_next_terminal_italic = 1
-colorscheme hybrid_material
-let g:enable_bold_font = 1
-let g:enable_italic_font = 1
+syntax on
+let g:oceanic_next_terminal_bold = 1
+let g:oceanic_next_terminal_italic = 1
+colorscheme OceanicNext
+
+" let g:airline_theme='oceanicnext'
+
+" colorscheme hybrid_material
+" let g:enable_bold_font = 1
+" let g:enable_italic_font = 1
 
 " Setup Terminal Colors For Neovim {{{
-if has('nvim')
-  " dark0 + gray
-  let g:terminal_color_0 = "#282828"
-  let g:terminal_color_8 = "#928374"
+" if has('nvim')
+"   " dark0 + gray
+"   let g:terminal_color_0 = "#282828"
+"   let g:terminal_color_8 = "#928374"
 
-  " neurtral_red + bright_red
-  let g:terminal_color_1 = "#cc241d"
-  let g:terminal_color_9 = "#fb4934"
+"   " neurtral_red + bright_red
+"   let g:terminal_color_1 = "#cc241d"
+"   let g:terminal_color_9 = "#fb4934"
 
-  " neutral_green + bright_green
-  let g:terminal_color_2 = "#98971a"
-  let g:terminal_color_10 = "#b8bb26"
+"   " neutral_green + bright_green
+"   let g:terminal_color_2 = "#98971a"
+"   let g:terminal_color_10 = "#b8bb26"
 
-  " neutral_yellow + bright_yellow
-  let g:terminal_color_3 = "#d79921"
-  let g:terminal_color_11 = "#fabd2f"
+"   " neutral_yellow + bright_yellow
+"   let g:terminal_color_3 = "#d79921"
+"   let g:terminal_color_11 = "#fabd2f"
 
-  " neutral_blue + bright_blue
-  let g:terminal_color_4 = "#458588"
-  let g:terminal_color_12 = "#83a598"
+"   " neutral_blue + bright_blue
+"   let g:terminal_color_4 = "#458588"
+"   let g:terminal_color_12 = "#83a598"
 
-  " neutral_purple + bright_purple
-  let g:terminal_color_5 = "#b16286"
-  let g:terminal_color_13 = "#d3869b"
+"   " neutral_purple + bright_purple
+"   let g:terminal_color_5 = "#b16286"
+"   let g:terminal_color_13 = "#d3869b"
 
-  " neutral_aqua + faded_aqua
-  let g:terminal_color_6 = "#689d6a"
-  let g:terminal_color_14 = "#8ec07c"
+"   " neutral_aqua + faded_aqua
+"   let g:terminal_color_6 = "#689d6a"
+"   let g:terminal_color_14 = "#8ec07c"
 
-  " light4 + light1
-  let g:terminal_color_7 = "#a89984"
-  let g:terminal_color_15 = "#ebdbb2"
-endif " }}}
+"   " light4 + light1
+"   let g:terminal_color_7 = "#a89984"
+"   let g:terminal_color_15 = "#ebdbb2"
+" endif " }}}
 " }}}
 " Section: Local-Machine Config {{{
 
@@ -413,22 +422,16 @@ let NERDTreeShowHidden=1
 let g:tsuquyomi_completion_detail = 1
 let g:webdevicons_enable_nerdtree = 1
 
-let g:prettier#config#print_width = 85
-let g:prettier#config#semi = 'true'
-let g:prettier#exec_cmd_async = 1
-let g:prettier#config#use_tabs = 'false'
-let g:prettier#config#single_quote = 'true'
-let g:prettier#config#bracket_spacing = 'true'
-let g:prettier#config#jsx_bracket_same_line = 'false'
-let g:prettier#config#jsx_single_quote = 'true'
-let g:prettier#config#config_precedence = 'prefer-file'
+" dark red
+hi tsxTagName guifg=#E06C75
 
-let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
+" orange
+hi tsxCloseString guifg=#F99575
+hi tsxCloseTag guifg=#F99575
+hi tsxAttributeBraces guifg=#F99575
+hi tsxEqual guifg=#F99575
 
-
-let g:fixmyjs_engine = 'tslint'
-autocmd BufWritePost *.tsx Fixmyjs
-
+" yellow
+hi tsxAttrib guifg=#F8BD7F cterm=italic
 
 " }}}

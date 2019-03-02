@@ -30,10 +30,6 @@
     "statusBar.noFolderBackground": "#005f5f",
     "statusBar.debuggingBackground": "#005f5f"
   },
-  "workbench.colorTheme": "Noctis",
-  "workbench.iconTheme": "material-icon-theme",
-  "workbench.sideBar.location": "left",
-  "workbench.statusBar.visible": true,
   "zenMode.hideStatusBar": false,
   "tslint.run": "onSave",
   "tslint.alwaysShowStatus": true,
@@ -48,5 +44,9 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "vim.neovimPath": "/usr/bin/nvim",
   "editor.renderWhitespace": "all",
-  "vim.enableNeovim": true
+  "vim.enableNeovim": true,
+  "workbench.iconTheme": "material-icon-theme",
+  "tslint.ignoreDefinitionFiles": true,
+  "workbench.colorTheme": "Noctis",
+  "debug.internalConsoleOptions": "neverOpen"
 }
