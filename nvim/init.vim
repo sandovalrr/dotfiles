@@ -336,7 +336,6 @@ set completeopt-=preview
 " }}}1
 " Section: Theme {{{
 
-" let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 " let ayucolor="dark"
 " set termguicolors
 set background=dark
