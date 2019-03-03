@@ -139,9 +139,11 @@ Plug 'edkolev/tmuxline.vim'               " Make the Tmux bar match Vim
 Plug 'ryanoasis/vim-devicons'
 Plug 'junegunn/goyo.vim'
 Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'chrisbra/Colorizer'
 
 
 " Project Navigation {{{3
+Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'junegunn/fzf',                      { 'dir': '~/.fzf', 'do': './install --all' }

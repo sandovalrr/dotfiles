@@ -9,7 +9,7 @@ let NERDTreeShowHidden=1
 autocmd BufEnter * lcd %:p:h
 
 "" NERDTree configuration
-let g:NERDTreeChDirMode=2
+let g:NERDTreeChDirMode=0
 let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__']
 let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
 let g:NERDTreeShowBookmarks=1
@@ -18,6 +18,6 @@ let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
 let g:NERDTreeWinSize = 50
 let NERDTreeShowHidden=1
 
-
 let g:webdevicons_enable_nerdtree = 1
+
 
