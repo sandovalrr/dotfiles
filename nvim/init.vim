@@ -175,6 +175,7 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'lifepillar/pgsql.vim'
 Plug 'chrisbra/Colorizer'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 " Git
 Plug 'tpope/vim-fugitive'                 " Git stuff in Vim
