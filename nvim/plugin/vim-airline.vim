@@ -1,4 +1,4 @@
-let g:airline_section_x = '%{PencilMode()}'
+" let g:airline_section_x = '%{PencilMode()}'
 
 " Configure the Tabline
 let g:airline#extensions#tabline#enabled = 1
