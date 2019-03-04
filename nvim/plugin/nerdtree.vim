@@ -5,7 +5,22 @@ augroup END
 
 let NERDTreeQuitOnOpen=1
 let NERDTreeShowHidden=1
-:nnoremap <C-g> :NERDTreeToggle<CR>
+
+function RNERDToggle()
+  try
+    if &filetype == 'nerdtree'
+        :NERDTreeToggle
+    elseif &filetype == ''
+        :NERDTreeToggle
+    else
+        :NERDTreeFind
+    endif
+  catch /.*/
+    :NERDTreeToggle
+  endtry
+endfunction
+
+:nnoremap <C-g> :call RNERDToggle()<CR>
 autocmd BufEnter * lcd %:p:h
 
 "" NERDTree configuration
