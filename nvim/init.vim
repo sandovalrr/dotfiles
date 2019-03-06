@@ -57,7 +57,7 @@ set splitright
 " }}}2
 " Point to the Python executables in `asdf` {{{2
 if has ("unix")
-  let s:uname = system("uname -s")
+  let s:uname = substitute(system('uname'), '\n', '', '')
   if s:uname == "Darwin"
     let g:python_host_prog  = '/usr/local/bin/python'
     let g:python3_host_prog = '/usr/local/bin/python3'
