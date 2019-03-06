@@ -140,6 +140,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'junegunn/goyo.vim'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'chrisbra/Colorizer'
+Plug 'luochen1990/rainbow'
 
 
 " Project Navigation {{{3
@@ -352,9 +353,9 @@ endif
 
 " Theme
 syntax on
+colorscheme OceanicNext
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
-colorscheme OceanicNext
 
 " let g:airline_theme='oceanicnext'
 
