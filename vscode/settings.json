@@ -23,7 +23,7 @@
   "vim.useSystemClipboard": true,
   "window.menuBarVisibility": "toggle",
   "window.titleBarStyle": "custom",
-  "window.zoomLevel": 0,
+  "window.zoomLevel": 2,
   "workbench.activityBar.visible": true,
   "workbench.colorCustomizations": {
     "statusBar.background": "#005f5f",

@@ -260,6 +260,9 @@ Plug 'plasticboy/vim-markdown',           { 'for': 'markdown' }
 Plug 'elixir-editors/vim-elixir'
 Plug 'slashmili/alchemist.vim'
 
+" SQL {{{4
+Plug 'vim-scripts/dbext.vim'
+
 call plug#end()
 " Load plugin configurations {{{2
 " For some reason, a few plugins seem to have config options that cannot be
@@ -356,6 +359,7 @@ syntax on
 colorscheme OceanicNext
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
+hi! Normal ctermbg=NONE guibg=NONE
 
 " let g:airline_theme='oceanicnext'
 

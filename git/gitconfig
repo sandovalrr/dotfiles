@@ -123,26 +123,44 @@
   separator = red bold
   linenumber = normal
 
-[push]
-  # 'git push' will push the current branch to its tracking branch
-  # the usual default is to push all branches
-  default = tracking
+; [push]
+;   # 'git push' will push the current branch to its tracking branch
+;   # the usual default is to push all branches
+;   default = tracking
+
+; [merge]
+;   tool = vimdiff
+;   confictstyle = diff3
+
+; [mergetool "vimdiff"]
+;   propmt = false
 
 [merge]
-  tool = Kaleidoscope
-  algorithm = patience
-  strategy = recursive
-
-[mergetool "Kaleidoscope"]
-  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-  trustExitCode = true
-
+  tool = vimdiff
+[mergetool]
+  prompt = true
+[mergetool "vimdiff"]
+  cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+[difftool]
+  prompt = false
 [diff]
-  tool = Kaleidoscope
-  compactionHeuristic = true
+  tool = vimdiff
 
-[difftool "Kaleidoscope"]
-  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+; [merge]
+;   tool = vimdiff
+;   algorithm = patience
+;   strategy = recursive
+
+; [mergetool "Kaleidoscope"]
+;   cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+;   trustExitCode = true
+
+; [diff]
+;   tool = Kaleidoscope
+;   compactionHeuristic = true
+
+; [difftool "Kaleidoscope"]
+;   cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 
 [core]
   excludesfile = ~/.gitignore_global

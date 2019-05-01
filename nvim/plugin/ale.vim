@@ -4,7 +4,7 @@ let g:ale_linters = {
 \}
 
 let g:ale_fixers = {
-\   'javascript': ['eslint'],
+\   'javascript': ['prettier', 'eslint'],
 \   'typescript': ['prettier', 'tslint']
 \}
 
