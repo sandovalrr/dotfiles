@@ -2,7 +2,7 @@
 " ----------------------------
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
-let mapleader = " "
+let mapleader = ","
 let &runtimepath .= "," . $DOTFILES . "/nvim"  " Add DOTFILES to runtimepath
 let &packpath .= "," . $DOTFILES . "/nvim"
 
@@ -91,7 +91,8 @@ if has("autocmd")
     \ endif "}}}2
 
   " Automatically clean trailing whitespace
-  autocmd BufWritePre * :%s/\s\+$//e
+  let blacklist = ['ts', 'js', 'tsx', 'jsx']
+  autocmd BufWritePre * if index(blacklist, &ft) < 0 | :%s/\s\+$//e
 
   autocmd BufRead,BufNewFile COMMIT_EDITMSG call pencil#init({'wrap': 'soft'})
                                         \ | set textwidth=0
@@ -263,6 +264,9 @@ Plug 'slashmili/alchemist.vim'
 " SQL {{{4
 Plug 'vim-scripts/dbext.vim'
 
+" Graphql {{{4
+Plug 'jparise/vim-graphql'
+
 call plug#end()
 " Load plugin configurations {{{2
 " For some reason, a few plugins seem to have config options that cannot be
@@ -289,6 +293,10 @@ let g:ranger_replace_netrw = 1 " open ranger when vim open a directory
 " Normal Mode Remaps {{{2
 
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+nnoremap <silent> + :exe "vertical resize +5"<CR>
+nnoremap <silent> - :exe "vertical resize -5"<CR>
+nnoremap <silent> <leader>+ :exe "resize +5"<CR>
+nnoremap <silent> <leader>- :exe "resize -5"<CR>
 
 "*****************************************************************************
 "" Abbreviations
@@ -430,6 +438,7 @@ let NERDTreeShowHidden=1
 
 let g:tsuquyomi_completion_detail = 1
 let g:webdevicons_enable_nerdtree = 1
+let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
 
 " dark red
 hi tsxTagName guifg=#E06C75

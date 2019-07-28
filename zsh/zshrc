@@ -200,3 +200,13 @@ if [ -f '/home/rs-dev/google-cloud-sdk/path.zsh.inc' ]; then . '/home/rs-dev/goo
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/rs-dev/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/rs-dev/google-cloud-sdk/completion.zsh.inc'; fi
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /home/rs-dev/.config/yarn/global/node_modules/tabtab/.completions/serverless.zsh ]] && . /home/rs-dev/.config/yarn/global/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /home/rs-dev/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh ]] && . /home/rs-dev/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[[ -f /home/rs-dev/.config/yarn/global/node_modules/tabtab/.completions/slss.zsh ]] && . /home/rs-dev/.config/yarn/global/node_modules/tabtab/.completions/slss.zsh

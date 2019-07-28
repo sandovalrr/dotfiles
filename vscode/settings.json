@@ -17,18 +17,29 @@
   "prettier.jsxSingleQuote": true,
   "prettier.singleQuote": true,
   "prettier.tslintIntegration": true,
+  "go.delveConfig": {
+    "dlvLoadConfig": {
+      "followPointers": true,
+      "maxVariableRecurse": 1,
+      "maxStringLen": 500,
+      "maxArrayValues": 64,
+      "maxStructFields": -1
+    },
+    "apiVersion": 2,
+    "showGlobalVariables": true
+  },
   "tslint.autoFixOnSave": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "vim.statusBarColorControl": true,
   "vim.useSystemClipboard": true,
   "window.menuBarVisibility": "toggle",
   "window.titleBarStyle": "custom",
-  "window.zoomLevel": 2,
+  "window.zoomLevel": 0,
   "workbench.activityBar.visible": true,
   "workbench.colorCustomizations": {
-    "statusBar.background": "#005f5f",
-    "statusBar.noFolderBackground": "#005f5f",
-    "statusBar.debuggingBackground": "#005f5f"
+    "statusBar.background": "#5f0000",
+    "statusBar.noFolderBackground": "#5f0000",
+    "statusBar.debuggingBackground": "#5f0000"
   },
   "zenMode.hideStatusBar": false,
   "tslint.run": "onSave",
@@ -47,6 +58,12 @@
   "vim.enableNeovim": true,
   "workbench.iconTheme": "material-icon-theme",
   "tslint.ignoreDefinitionFiles": true,
-  "workbench.colorTheme": "Noctis",
-  "debug.internalConsoleOptions": "neverOpen"
+  "workbench.colorTheme": "Noctis Obscuro",
+  "debug.internalConsoleOptions": "neverOpen",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
