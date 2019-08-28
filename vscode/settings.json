@@ -17,6 +17,17 @@
   "prettier.jsxSingleQuote": true,
   "prettier.singleQuote": true,
   "prettier.tslintIntegration": true,
+  "go.delveConfig": {
+    "dlvLoadConfig": {
+      "followPointers": true,
+      "maxVariableRecurse": 1,
+      "maxStringLen": 500,
+      "maxArrayValues": 64,
+      "maxStructFields": -1
+    },
+    "apiVersion": 2,
+    "showGlobalVariables": true
+  },
   "tslint.autoFixOnSave": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "vim.statusBarColorControl": true,
@@ -47,6 +58,12 @@
   "vim.enableNeovim": true,
   "workbench.iconTheme": "material-icon-theme",
   "tslint.ignoreDefinitionFiles": true,
-  "workbench.colorTheme": "Noctis",
-  "debug.internalConsoleOptions": "neverOpen"
+  "workbench.colorTheme": "Noctis Obscuro",
+  "debug.internalConsoleOptions": "neverOpen",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
