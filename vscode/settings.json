@@ -23,7 +23,7 @@
   "vim.useSystemClipboard": true,
   "window.menuBarVisibility": "toggle",
   "window.titleBarStyle": "custom",
-  "window.zoomLevel": 0,
+  "window.zoomLevel": 1,
   "workbench.activityBar.visible": true,
   "workbench.colorCustomizations": {
     "statusBar.background": "#005f5f",
@@ -42,7 +42,7 @@
   "eslint.autoFixOnSave": true,
   "tslint.validateWithDefaultConfig": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "vim.neovimPath": "/usr/bin/nvim",
+  "vim.neovimPath": "/usr/local/bin/nvim",
   "editor.renderWhitespace": "all",
   "vim.enableNeovim": true,
   "workbench.iconTheme": "material-icon-theme",
