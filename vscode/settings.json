@@ -3,7 +3,6 @@
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.cursorStyle": "underline",
   "editor.fontFamily": "'Noto Mono', 'Courier New', monospace",
-  "editor.fontLigatures": true,
   "editor.fontSize": 13,
   "editor.fontWeight": "100",
   "editor.formatOnSave": true,
@@ -65,5 +64,7 @@
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "editor.fontLigatures": true,
+  "terminal.integrated.rendererType": "dom"
 }

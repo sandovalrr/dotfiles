@@ -134,7 +134,9 @@ call plug#begin()
 Plug 'trevordmiller/nova-vim'
 Plug 'ayu-theme/ayu-vim'
 Plug 'mhartington/oceanic-next'
+Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'vim-airline/vim-airline'            " Handy info
+Plug 'vim-airline/vim-airline-themes'
 Plug 'retorillo/airline-tablemode.vim'
 Plug 'edkolev/tmuxline.vim'               " Make the Tmux bar match Vim
 Plug 'ryanoasis/vim-devicons'
@@ -364,9 +366,16 @@ endif
 
 " Theme
 syntax on
-colorscheme OceanicNext
-let g:oceanic_next_terminal_bold = 1
-let g:oceanic_next_terminal_italic = 1
+" colorscheme OceanicNext
+let g:airline_theme = "hybrid"
+colorscheme hybrid_reverse
+
+let g:enable_bold_font = 1
+let g:enable_italic_font = 1
+let g:hybrid_transparent_background = 1
+
+" let g:oceanic_next_terminal_bold = 1
+" let g:oceanic_next_terminal_italic = 1
 hi! Normal ctermbg=NONE guibg=NONE
 
 " let g:airline_theme='oceanicnext'
