@@ -4,3 +4,12 @@ export ANT_ROOT="$(brew --prefix ant)/bin"
 # -- Android Development -------------------------------------------------------
 export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
 export NDK_ROOT=/opt/android-ndk-r10e
+<<<<<<< HEAD
+=======
+
+# -- `ondir` configuration -----------------------------------------------------
+function chpwd() {
+  eval "`ondir \"$OLDPWD\" \"$PWD\"`"
+}
+# eval "`ondir /`"
+>>>>>>> origin/master
