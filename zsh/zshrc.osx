@@ -9,4 +9,4 @@ export NDK_ROOT=/opt/android-ndk-r10e
 function chpwd() {
   eval "`ondir \"$OLDPWD\" \"$PWD\"`"
 }
-eval "`ondir /`"
+# eval "`ondir /`"

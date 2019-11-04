@@ -56,16 +56,8 @@ set splitbelow
 set splitright
 " }}}2
 " Point to the Python executables in `asdf` {{{2
-if has ("unix")
-  let s:uname = substitute(system('uname'), '\n', '', '')
-  if s:uname == "Darwin"
-    let g:python_host_prog  = '/usr/local/bin/python'
-    let g:python3_host_prog = '/usr/local/bin/python3'
-  else
     let g:python_host_prog  = '/usr/bin/python'
     let g:python3_host_prog = '/usr/bin/python3'
-  endif
-endif
 
 " }}}2
 " Configure grep to use The Silver Searcher {{{2
