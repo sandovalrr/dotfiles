@@ -6,6 +6,7 @@ let mapleader = ","
 let &runtimepath .= "," . $DOTFILES . "/nvim"  " Add DOTFILES to runtimepath
 let &packpath .= "," . $DOTFILES . "/nvim"
 
+set encoding=UTF-8
 set shell=zsh " Set bash as the prompt for Vim
 set backspace=2   " Backspace deletes like most programs in insert mode
 set nobackup
@@ -56,16 +57,16 @@ set splitbelow
 set splitright
 " }}}2
 " Point to the Python executables in `asdf` {{{2
-if has ("unix")
-  let s:uname = substitute(system('uname'), '\n', '', '')
-  if s:uname == "Darwin"
-    let g:python_host_prog  = '/usr/local/bin/python'
-    let g:python3_host_prog = '/usr/local/bin/python3'
-  else
-    let g:python_host_prog  = '/usr/bin/python'
-    let g:python3_host_prog = '/usr/bin/python3'
-  endif
-endif
+" if has ("unix")
+"   let s:uname = substitute(system('uname'), '\n', '', '')
+"   if s:uname == "Darwin"
+"     let g:python_host_prog  = '/usr/local/bin/python'
+"     let g:python3_host_prog = '/usr/local/bin/python3'
+"   else
+let g:python_host_prog  = '/usr/bin/python'
+let g:python3_host_prog = '/usr/bin/python3'
+  " endif
+" endif
 
 " }}}2
 " Configure grep to use The Silver Searcher {{{2
