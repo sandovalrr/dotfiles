@@ -20,8 +20,7 @@ fi
 
 # -- GIT -----------------------------------------------------------------------
 
-if get_boolean_response "Do you want to install the Git configuration files?"
-then
+if get_boolean_response "Do you want to install the Git configuration files?"; then
   ln -sf $HOME/.dotfiles/git/gitignore_global $HOME/.gitignore_global
   echo_item "Linked global .gitignore" "green"
 
@@ -77,8 +76,7 @@ fi
 echo ""
 
 # -- TMUX ----------------------------------------------------------------------
-if get_boolean_response "Do you want to install the Tmux configuration file?"
-then
+if get_boolean_response "Do you want to install the Tmux configuration file?"; then
   ln -sf $HOME/.dotfiles/tmux/tmux.conf $HOME/.tmux.conf
   echo_item "Linked tmux configutation" "green"
 else
@@ -93,7 +91,7 @@ if exists "nvm"; then
   echo_item "Node tools are already installed" green
 else
   if get_boolean_response "Do you want to install Node Version Manager?"; then
-    git clone https://github.com/creationix/nvm.git ~/.nvm && cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`
+    git clone https://github.com/creationix/nvm.git ~/.nvm && cd ~/.nvm && git checkout $(git describe --abbrev=0 --tags)
     . $HOME/.nvm/nvm.sh
     #nvm alias default system
     nvm install --lts
@@ -108,8 +106,7 @@ echo ""
 # -- NEOVIM --------------------------------------------------------------------
 # Link the dotfiles
 
-if get_boolean_response "Do you want to install the Neovim configuration file?"
-then
+if get_boolean_response "Do you want to install the Neovim configuration file?"; then
   ln -sf $HOME/.dotfiles/nvim/init.vim $HOME/.config/nvim/init.vim
   echo_item "Linked Neovim configuration" "green"
 else
@@ -117,7 +114,6 @@ else
 fi
 
 echo ""
-
 
 # -- GCloud --------------------------------------------------------------------
 

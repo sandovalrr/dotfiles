@@ -8,6 +8,12 @@ if exists "brew"; then
 else
   if get_boolean_response "Do you want to install Homebrew?"; then
     ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+
+    if get_boolean_response "Do you want to install shfmt"; then
+      brew install shfmt
+    else
+      echo_item "Skipping shfmt" "red"
+    fi
   else
     echo_item "Skipping Homebrew install" "red"
   fi
@@ -25,21 +31,6 @@ else
     rbenv rehash
   else
     echo_item "Skipping rbenv install" red
-  fi
-fi
-
-echo ""
-
-# -- npm -----------------------------------------------------------------------
-
-if exists "npm"; then
-  echo_item "npm is already installed" green
-else
-  if get_boolean_response "Do you want to install npm?"; then
-    brew install node
-    source ./node.sh
-  else
-    echo_item "Skipping npm install" red
   fi
 fi
 
@@ -68,7 +59,7 @@ else
     brew install --HEAD neovim
     curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-    echi_item "Installing Vim Plug" green
+    echo_item "Installing Vim Plug" green
     curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
     nvim +PlugInstall +qa
@@ -79,11 +70,8 @@ fi
 
 # -- VSCODE -----------------------------------------------------------------------
 
-if get_boolean_response "Do you want to install VS Code configuration files?"
-then
-
+if get_boolean_response "Do you want to install VS Code configuration files?"; then
   source 'vscode/install_plugins.sh'
-
   ln -sf $HOME/.dotfiles/vscode/keybindings.json $HOME/Library/Application\ Support/Code/User/keybindings.json
   ln -sf $HOME/.dotfiles/vscode/settings.json $HOME/Library/Application\ Support/Code/User/settings.json
 else

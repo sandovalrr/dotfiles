@@ -1,4 +1,7 @@
-# source $HOME/.bash_profile
+
+if [[ -f "$HOME/.bash_profile" ]]; then
+  source $HOME/.bash_profile
+fi
 # source $HOME/.bash_aliases
 
 # -- Dotfiles Directory --------------------------------------------------------
@@ -163,7 +166,7 @@ fi
 
 # -- Go ------------------------------------------------------------------------
 # Add $GOTPATH/bin to the $PATH
-export GOPATH=$HOME/Code/go
+export GOPATH=$HOME/go
 export PATH="$PATH:$GOPATH/bin"
 
 # -- Kubectl

@@ -34,5 +34,3 @@ let g:NERDTreeWinSize = 50
 let NERDTreeShowHidden=1
 
 let g:webdevicons_enable_nerdtree = 1
-
-
