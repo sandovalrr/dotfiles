@@ -57,8 +57,8 @@ set splitbelow
 set splitright
 " }}}2
 " Point to the Python executables in `asdf` {{{2
-let g:python_host_prog  = '/usr/bin/python'
-let g:python3_host_prog = '/usr/bin/python3'
+let g:python_host_prog  = '/usr/local/bin/python'
+let g:python3_host_prog = '/usr/local/bin/python3'
 
 " }}}2
 " Configure grep to use The Silver Searcher {{{2
