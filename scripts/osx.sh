@@ -77,3 +77,11 @@ if get_boolean_response "Do you want to install VS Code configuration files?"; t
 else
   echo_item "Ignoring VS Code configuration"
 fi
+
+# -- Golang -----------------------------------------------------------------------
+
+if get_boolean_response "Do you want to install Golang?"; then
+  curl https://raw.githubusercontent.com/canha/golang-tools-install-script/master/goinstall.sh | bash
+else
+  echo_item "Ignoring Golang"
+fi
