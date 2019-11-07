@@ -6,7 +6,8 @@ let g:ale_linters = {
 \   'yaml': ['prettier'],
 \   'json': ['prettier'],
 \   'graphql': ['gqlint'],
-\   'sh' : ['shell']
+\   'sh' : ['shell'],
+\   'scss': ['prettier']
 \}
 
 let g:ale_fixers = {
@@ -16,6 +17,7 @@ let g:ale_fixers = {
 \   'go': ['gofmt'],
 \   'yaml': ['prettier'],
 \   'json': ['prettier'],
+\   'scss': ['prettier'],
 \   'graphql': ['prettier'],
 \   'sh': ['shfmt']
 \}
