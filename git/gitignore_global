@@ -31,3 +31,6 @@ ember.d.ts
 
 # ASDF Tool Versions
 .tool-versions
+
+# Ignoring result of merge tool
+*.orig

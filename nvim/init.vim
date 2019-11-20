@@ -124,7 +124,6 @@ nnoremap <leader>gt :call OpenInGitTower()<CR>
 call plug#begin()
 
 " UI {{{3
-Plug 'trevordmiller/nova-vim'
 Plug 'ayu-theme/ayu-vim'
 Plug 'mhartington/oceanic-next'
 Plug 'kristijanhusak/vim-hybrid-material'
@@ -138,11 +137,13 @@ Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'chrisbra/Colorizer'
 Plug 'luochen1990/rainbow'
 
-
 " Project Navigation {{{3
 Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/fzf',                      { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -199,11 +200,7 @@ Plug 'Quramy/tsuquyomi'
 " Language Support {{{3
 " JavaScript {{{4
 Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
 Plug 'rhysd/npm-debug-log.vim'
-Plug '~/projects/vim-plugins/vim-ember-cli'
-Plug 'AndrewRadev/ember_tools.vim'
-Plug 'neovim/node-host',                  { 'do': 'npm install' }
 
 " TypeScript {{{4
 " Plug 'HerringtonDarkholme/yats.vim'
@@ -361,7 +358,9 @@ endif
 syntax on
 " colorscheme OceanicNext
 let g:airline_theme = "hybrid"
-colorscheme hybrid_reverse
+" colorscheme hybrid_reverse
+let ayucolor="dark"
+colorscheme ayu
 
 let g:enable_bold_font = 1
 let g:enable_italic_font = 1
@@ -419,39 +418,11 @@ if filereadable($DOTFILES . "/nvim/init.local.vim")
 endif
 " }}}
 " Section: General Configs  {{{
-let g:NERDTreeHijackNetrw=0
-augroup NERDTreeHijackNetrw
-  autocmd VimEnter * silent! autocmd! FileExplorer
-augroup END
-
-let NERDTreeQuitOnOpen=1
-:nnoremap <C-g> :NERDTreeToggle<CR>
-autocmd BufEnter * lcd %:p:h
-
-"" NERDTree configuration
-let g:NERDTreeChDirMode=2
-let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__']
-let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
-let g:NERDTreeShowBookmarks=1
-let g:nerdtree_tabs_focus_on_files=1
-let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
-let g:NERDTreeWinSize = 50
-let NERDTreeShowHidden=1
-
-let g:tsuquyomi_completion_detail = 1
-let g:webdevicons_enable_nerdtree = 1
 let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
 
-" dark red
-hi tsxTagName guifg=#E06C75
-
-" orange
-hi tsxCloseString guifg=#F99575
-hi tsxCloseTag guifg=#F99575
-hi tsxAttributeBraces guifg=#F99575
-hi tsxEqual guifg=#F99575
-
-" yellow
-hi tsxAttrib guifg=#F8BD7F cterm=italic
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
 
 " }}}

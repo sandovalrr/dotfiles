@@ -12,10 +12,8 @@
   "editor.quickSuggestionsDelay": 10,
   "editor.wordBasedSuggestions": false,
   "go.autocompleteUnimportedPackages": true,
-  "prettier.eslintIntegration": true,
   "prettier.jsxSingleQuote": true,
   "prettier.singleQuote": true,
-  "prettier.tslintIntegration": true,
   "go.delveConfig": {
     "dlvLoadConfig": {
       "followPointers": true,

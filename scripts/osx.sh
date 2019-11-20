@@ -21,6 +21,14 @@ fi
 
 echo ""
 
+# -- iTerm2 --------------------------------------------------------------------
+
+if exists "brew"; then
+  if get_boolean_response "Do you want to install iTerm2"; then
+    brew cask install iterm2
+  fi
+fi
+
 # -- rbenv ---------------------------------------------------------------------
 
 if exists "rbenv"; then
