@@ -23,9 +23,9 @@ get_boolean_response() {
   while true; do
     read -p "$1 (Y/N) " yn
     case $yn in
-      [Yy]* ) return 0;;
-      [Nn]* ) return 1;;
-      * ) echo "Please answer yes or no";;
+    [Yy]*) return 0 ;;
+    [Nn]*) return 1 ;;
+    *) echo "Please answer yes or no" ;;
     esac
   done
 }
@@ -44,4 +44,8 @@ system_is_linux() {
   else
     return 1
   fi
+}
+
+it2prof() {
+  echo -e "\033]50;SetProfile=$1\a"
 }
