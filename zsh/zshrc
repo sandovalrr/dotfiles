@@ -182,7 +182,7 @@ fi
 
 export PATH=$PATH:$HOME/.yarn/bin
 # GoLang
-export GOROOT=/usr/local/Cellar/go/1.12.9/libexec
+export GOROOT=/usr/local/Cellar/go/1.13.4/libexec
 export PATH=$PATH:$GOROOT/bin
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
