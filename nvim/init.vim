@@ -7,7 +7,7 @@ let &runtimepath .= "," . $DOTFILES . "/nvim"  " Add DOTFILES to runtimepath
 let &packpath .= "," . $DOTFILES . "/nvim"
 
 set encoding=UTF-8
-set shell=zsh " Set bash as the prompt for Vim
+set shell=zsh     " Set bash as the prompt for Vim
 set backspace=2   " Backspace deletes like most programs in insert mode
 set nobackup
 set nowritebackup
@@ -124,7 +124,7 @@ nnoremap <leader>gt :call OpenInGitTower()<CR>
 call plug#begin()
 
 " UI {{{3
-Plug 'ayu-theme/ayu-vim'
+Plug 'sandovalrr/ayu-vim'
 Plug 'mhartington/oceanic-next'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'vim-airline/vim-airline'            " Handy info
@@ -424,5 +424,9 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
+autocmd BufEnter * set mouse=
+
+autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
+
 
 " }}}

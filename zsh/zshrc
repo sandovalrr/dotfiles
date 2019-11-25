@@ -210,3 +210,6 @@ if [ -f '~/google-cloud-sdk/completion.zsh.inc' ]; then . '~/google-cloud-sdk/co
 
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
