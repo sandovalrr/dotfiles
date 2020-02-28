@@ -67,5 +67,11 @@
   "terminal.integrated.rendererType": "dom",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
