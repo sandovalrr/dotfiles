@@ -64,5 +64,8 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.fontLigatures": true,
-  "terminal.integrated.rendererType": "dom"
+  "terminal.integrated.rendererType": "dom",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
 }

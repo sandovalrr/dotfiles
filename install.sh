@@ -32,6 +32,21 @@ fi
 
 echo ""
 
+# -- Alacritty Setup ----------------------------------------------------------
+
+if get_boolean_response "Do you want to install Alacritty?"; then
+  echo_item "Installing Alacritty" "green"
+  brew cask install alacritty;
+else
+  echo_item "Ignoring Alacritty Installation" red
+fi
+
+if get_boolean_response "Do you want to install Alacritty configuration file?"; then
+  ln -sf $HOME/.dotfiles/alacritty/config.yml $HOME/.alacritty.yml
+else
+  echo_item "Ignoring Alacritty configuration" red
+fi
+
 # -- ZSH Setup -----------------------------------------------------------------
 
 if exists "zsh"; then

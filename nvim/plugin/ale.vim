@@ -1,6 +1,6 @@
 let g:ale_linters = {
 \   'javascript': ['eslint', 'flow'],
-\   'typescript': ['tslint','prettier'],
+\   'typescript': ['eslint', 'tsserver'],
 \   'html': ['prettier'],
 \   'go': ['gofmt'],
 \   'yaml': ['prettier'],
@@ -12,7 +12,7 @@ let g:ale_linters = {
 
 let g:ale_fixers = {
 \   'javascript': ['prettier', 'eslint'],
-\   'typescript': ['prettier', 'tslint'],
+\   'typescript': ['prettier', 'eslint'],
 \   'html': ['prettier'],
 \   'go': ['gofmt'],
 \   'yaml': ['prettier'],
