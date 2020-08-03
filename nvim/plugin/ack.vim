@@ -3,4 +3,4 @@ function! Find_git_root()
 endfunction
 
 command! -nargs=1 Ag execute "Ack! <args> " . Find_git_root()
-
+command! -nargs=+ Agg execute "Ack! <q-args> " Find_git_root()
