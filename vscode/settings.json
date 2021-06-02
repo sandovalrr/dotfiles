@@ -5,7 +5,6 @@
   "editor.fontFamily": "'Noto Mono', 'Courier New', monospace",
   "editor.fontSize": 13,
   "editor.fontWeight": "100",
-  "editor.formatOnSave": true,
   "editor.lineNumbers": "relative",
   "editor.tabSize": 2,
   "editor.quickSuggestions": false,
@@ -31,7 +30,6 @@
   "vim.useSystemClipboard": true,
   "window.menuBarVisibility": "toggle",
   "window.titleBarStyle": "custom",
-  "window.zoomLevel": 1,
   "workbench.activityBar.visible": true,
   "workbench.colorCustomizations": {
     "statusBar.background": "#005f5f",
@@ -47,7 +45,6 @@
   "vim.foldfix": true,
   "vim.ignorecase": false,
   "vim.sneakUseIgnorecaseAndSmartcase": true,
-  "eslint.autoFixOnSave": true,
   "tslint.validateWithDefaultConfig": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "vim.neovimPath": "/usr/local/bin/nvim",
@@ -58,10 +55,10 @@
   "workbench.colorTheme": "Noctis Obscuro",
   "debug.internalConsoleOptions": "neverOpen",
   "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "editor.fontLigatures": true,
   "terminal.integrated.rendererType": "dom",
@@ -69,13 +66,25 @@
     "source.fixAll.eslint": true
   },
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.html-language-features"
   },
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
-  "editor.largeFileOptimizations": false
+  "editor.largeFileOptimizations": false,
+  "go.formatTool": "goimports",
+  "vim.leader": "/",
+  "eslint.migration.2_x": "off",
+  "eslint.alwaysShowStatus": true,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  }
 }

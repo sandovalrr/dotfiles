@@ -1,23 +1,27 @@
 let g:ale_linters = {
-\   'javascript': ['eslint', 'flow'],
+\   'javascript': ['eslint'],
 \   'typescript': ['eslint', 'tsserver'],
+\   'typescriptreact': ['eslint', 'tsserver'],
 \   'html': ['prettier'],
 \   'go': ['gofmt'],
 \   'yaml': ['prettier'],
 \   'json': ['prettier'],
 \   'graphql': ['gqlint'],
 \   'sh' : ['shell'],
-\   'scss': ['prettier']
+\   'scss': ['prettier'],
+\   'css': ['prettier']
 \}
 
 let g:ale_fixers = {
 \   'javascript': ['prettier', 'eslint'],
 \   'typescript': ['prettier', 'eslint'],
+\   'typescriptreact': ['prettier', 'eslint'],
 \   'html': ['prettier'],
 \   'go': ['gofmt'],
 \   'yaml': ['prettier'],
 \   'json': ['prettier'],
 \   'scss': ['prettier'],
+\   'css': ['prettier'],
 \   'graphql': ['prettier'],
 \   'sh': ['shfmt']
 \}
