@@ -57,8 +57,8 @@ set splitbelow
 set splitright
 " }}}2
 " Point to the Python executables in `asdf` {{{2
-let g:python_host_prog  = '/usr/local/bin/python3.8'
-let g:python3_host_prog = '/usr/local/bin/python3.8'
+let g:python_host_prog  = '/usr/local/bin/python3'
+let g:python3_host_prog = '/usr/local/bin/python3'
 
 " }}}2
 " Configure grep to use The Silver Searcher {{{2
@@ -96,8 +96,8 @@ if has("autocmd")
 
   autocmd BufRead,BufNewFile gitconfig set ft=.gitconfig
 
-	autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
-  au BufNewFile,BufRead *.ts set filetype=typescript
+	" autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
+  " au BufNewFile,BufRead *.ts set filetype=typescript
 
 endif
 " }}}1
@@ -136,13 +136,15 @@ Plug 'junegunn/goyo.vim'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'chrisbra/Colorizer'
 Plug 'luochen1990/rainbow'
+Plug 'joshdick/onedark.vim'
+Plug 'sheerun/vim-polyglot'
 
 " Project Navigation {{{3
 Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/fzf',                      { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -349,7 +351,7 @@ set completeopt-=preview
 
 " let ayucolor="dark"
 " set termguicolors
-set background=dark
+" set background=dark
 " colorscheme nova
 " Or if you have Neovim >= 0.1.5
 if (has("termguicolors"))
@@ -361,8 +363,9 @@ syntax on
 " colorscheme OceanicNext
 let g:airline_theme = "hybrid"
 " colorscheme hybrid_reverse
-let ayucolor="dark"
-colorscheme ayu
+" let ayucolor="dark"
+" colorscheme ayu
+colorscheme onedark
 
 let g:enable_bold_font = 1
 let g:enable_italic_font = 1
@@ -370,7 +373,7 @@ let g:hybrid_transparent_background = 1
 
 " let g:oceanic_next_terminal_bold = 1
 " let g:oceanic_next_terminal_italic = 1
-hi! Normal ctermbg=NONE guibg=NONE
+" hi! Normal ctermbg=NONE guibg=NONE
 
 " let g:airline_theme='oceanicnext'
 
