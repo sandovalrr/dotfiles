@@ -71,6 +71,18 @@ else
   fi
 fi
 
+# -- Helix Editor --------------------------------------------------------------
+
+if exists "hx"; then
+  echo_item "Helix Editor is already installed" green
+else
+  if get_boolean_response "Do you want to install Helix Editor?"; then
+    brew install helix-editor
+  else
+    echo_item "Skipping Helix Editor install" red
+  fi
+fi
+
 
 # -- VSCODE -----------------------------------------------------------------------
 

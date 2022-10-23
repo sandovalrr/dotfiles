@@ -173,3 +173,9 @@
   required = true
 [credential]
 	helper = cache --timeout=600
+; [url "ssh://git@gitssh.tredium.com:7999"]
+;   insteadOf = https://git.tredium.com/scm
+[url "git@bitbucket.org:tredium"]
+  insteadOf = https://bitbucket.org/tredium
+[url "git@bitbucket.org:tredium"]
+  insteadOf = https://git.tredium.com/pharmsys

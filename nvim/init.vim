@@ -1,4 +1,4 @@
-" Section: General Config {{{1
+" Section: General Config
 " ----------------------------
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
@@ -43,7 +43,7 @@ set spellfile=$HOME/.vim-spell-en.utf-8.add
 " Highlight search matches
 set hlsearch
 
-" Make it obvious where 120 characters is {{{2
+" Make it obvious where 120 characters is
 " Lifted from StackOverflow user Jeremy W. Sherman
 " http://stackoverflow.com/a/3765575/2250435
 if exists('+colorcolumn')
@@ -51,37 +51,37 @@ if exists('+colorcolumn')
   set colorcolumn=+1
 else
   au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>120v.\+', -1)
-endif " }}}2
-" Open new split panes to right and bottom, which feels more natural {{{2
+endif "
+" Open new split panes to right and bottom, which feels more natural
 set splitbelow
 set splitright
-" }}}2
-" Point to the Python executables in `asdf` {{{2
-let g:python_host_prog  = '/usr/local/bin/python3'
+"
+" Point to the Python executables in `asdf`
+let g:python_host_prog  = '/usr/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
 
-" }}}2
-" Configure grep to use The Silver Searcher {{{2
+"
+" Configure grep to use The Silver Searcher
 if executable('ag')
   " Use ag over grep
   set grepprg=ag\ --nogroup\ --nocolor
 
   command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 endif
-" }}}2
-" }}}1
-" Section: Autocommands {{{1
+"
+"
+" Section: Autocommands
 " --------------------------
 if has("autocmd")
   filetype plugin indent on
 
-  autocmd BufReadPost * " {{{2
+  autocmd BufReadPost * "
     " When editing a file, always jump to the last known cursor position.
     " Don't do it for commit messages, when the position is invalid, or when
     " inside an event handler (happens when dropping a file on gvim).
     \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
     \   exe "normal g`\"" |
-    \ endif "}}}2
+    \ endif
 
   " Automatically clean trailing whitespace
   let blacklist = ['ts', 'js', 'tsx', 'jsx']
@@ -100,30 +100,30 @@ if has("autocmd")
   " au BufNewFile,BufRead *.ts set filetype=typescript
 
 endif
-" }}}1
-" Section: External Functions {{{
+"
+" Section: External Functions
 
-" Open current file in Marked {{{
+" Open current file in Marked
 function! MarkedPreview()
   :w
   exec ':silent !open -a "Marked 2.app" ' . shellescape('%:p')
   redraw!
 endfunction
 nnoremap <leader>md :call MarkedPreview()<CR>
-" }}}
-" Open current repo in Tower {{{
+"
+" Open current repo in Tower
 function! OpenInGitTower()
   call system('gittower ' . getcwd())
 endfunction
 nnoremap <leader>gt :call OpenInGitTower()<CR>
-" }}}
-" }}}
-" Section: Load vim-plug plugins {{{
+"
+"
+" Section: Load vim-plug plugins
 
-" Specify plugins {{{2
+" Specify plugins
 call plug#begin()
 
-" UI {{{3
+" UI
 Plug 'sandovalrr/ayu-vim'
 Plug 'mhartington/oceanic-next'
 Plug 'kristijanhusak/vim-hybrid-material'
@@ -139,7 +139,7 @@ Plug 'luochen1990/rainbow'
 Plug 'joshdick/onedark.vim'
 Plug 'sheerun/vim-polyglot'
 
-" Project Navigation {{{3
+" Project Navigation
 Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
@@ -155,7 +155,7 @@ Plug 'majutsushi/tagbar'
 Plug 'rbgrouleff/bclose.vim'              " Required by ranger.vim
 Plug 'francoiscabrol/ranger.vim'
 
-" File Navigation {{{3
+" File Navigation
 Plug 'vim-scripts/matchit.zip'            " More powerful % matching
 Plug 'Lokaltog/vim-easymotion'            " Move like the wind!
 Plug 'jeffkreeftmeijer/vim-numbertoggle'  " Smarter line numbers
@@ -163,7 +163,7 @@ Plug 'kshenoy/vim-signature'              " Show marks in the gutter
 Plug 'haya14busa/incsearch.vim'           " Better search highlighting
 
 "
-" Editing {{{3
+" Editing
 Plug 'tpope/vim-surround'                 " Change word surroundings
 Plug 'tpope/vim-commentary'               " Comments stuff
 Plug 'tpope/vim-repeat'
@@ -178,6 +178,8 @@ Plug 'alvan/vim-closetag'
 Plug 'lifepillar/pgsql.vim'
 Plug 'chrisbra/Colorizer'
 Plug 'terryma/vim-multiple-cursors'
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'github/copilot.vim'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 " Git
@@ -196,82 +198,82 @@ Plug 'janko-m/vim-test'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 
 
-" Autocomplete {{{3
+" Autocomplete
 Plug 'Quramy/tsuquyomi'
 
-" Language Support {{{3
-" JavaScript {{{4
+" Language Support
+" JavaScript
 " Plug 'pangloss/vim-javascript'
 Plug 'rhysd/npm-debug-log.vim'
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 
-" TypeScript {{{4
+" TypeScript
 " Plug 'HerringtonDarkholme/yats.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 " Plug 'heavenshell/vim-tslint'
 " Plug 'mhartington/nvim-typescript',       { 'do': ':UpdateRemotePlugins' }
 
-" Elm {{{4
+" Elm
 Plug 'ElmCast/elm-vim'
 
-" HTML {{{4
+" HTML
 Plug 'othree/html5.vim',                  { 'for': 'html' }
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'mattn/emmet-vim'
 
-" CSS {{{4
+" CSS
 Plug 'hail2u/vim-css3-syntax',            { 'for': 'css' }
 
-" Sass {{{4
+" Sass
 Plug 'cakebaker/scss-syntax.vim'
 
-" Ruby {{{4
+" Ruby
 Plug 'vim-ruby/vim-ruby',                 { 'for': 'ruby' }
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-endwise'
 :
-" Python {{{4
+" Python
 Plug 'klen/python-mode',                  { 'for': 'python' }
 Plug 'davidhalter/jedi-vim',              { 'for': 'python' }
 Plug 'alfredodeza/pytest.vim',            { 'for': 'python' }
 
-" Rust {{{4
+" Rust
 Plug 'wellbredgrapefruit/tomdoc.vim',     { 'for': 'ruby' }
 Plug 'wting/rust.vim'
 Plug 'cespare/vim-toml'
 
-" Go {{{4
+" Go
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'nsf/gocode',                        { 'rtp': 'nvim', 'do': './nvim/symlink.sh' }
 Plug 'zchee/deoplete-go'
 
-" Markdown {{{4
+" Markdown
 Plug 'reedes/vim-pencil'                  " Markdown, Writing
 Plug 'godlygeek/tabular',                 { 'for': 'markdown' } " Needed for vim-markdown
 Plug 'plasticboy/vim-markdown',           { 'for': 'markdown' }
 
-" Elixir {{{4
+" Elixir
 Plug 'elixir-editors/vim-elixir'
 Plug 'slashmili/alchemist.vim'
 
-" SQL {{{4
+" SQL
 Plug 'vim-scripts/dbext.vim'
 
-" Graphql {{{4
+" Graphql
 Plug 'jparise/vim-graphql'
 
 call plug#end()
-" Load plugin configurations {{{2
+" Load plugin configurations
 " For some reason, a few plugins seem to have config options that cannot be
 " placed in the `plugins` directory. Those settings can be found here instead.
 
-" vim-airline {{{3
+" vim-airline
 let g:airline_powerline_fonts = 1 " Enable the patched Powerline fonts
 
-" emmet-vim {{{3
+" emmet-vim
 let g:user_emmet_leader_key='<C-E>'
 
 let g:user_emmet_settings = {
@@ -279,14 +281,14 @@ let g:user_emmet_settings = {
   \        'quote_char': "'"
   \    }
   \}
-" }}}3
+"
 
-" ranger.vim {{{3
+" ranger.vim
 let g:ranger_replace_netrw = 1 " open ranger when vim open a directory
 
-" Section: Remaps {{{1
+" Section: Remaps
 
-" Normal Mode Remaps {{{2
+" Normal Mode Remaps
 
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 nnoremap <silent> + :exe "vertical resize +5"<CR>
@@ -340,17 +342,17 @@ nnoremap td :tabclose<CR>
 
 " nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
 
-" }}}2
-" Insert Mode Remaps {{{2
+"
+" Insert Mode Remaps
 
 set completeopt-=preview
 
-" }}}2
-" }}}1
-" Section: Theme {{{
+"
+"
+" Section: Theme
 
-" let ayucolor="dark"
 " set termguicolors
+let ayucolor="mirage"
 " set background=dark
 " colorscheme nova
 " Or if you have Neovim >= 0.1.5
@@ -361,11 +363,11 @@ endif
 " Theme
 syntax on
 " colorscheme OceanicNext
-let g:airline_theme = "hybrid"
+" let g:airline_theme = "mirage"
 " colorscheme hybrid_reverse
 " let ayucolor="dark"
-" colorscheme ayu
-colorscheme onedark
+colorscheme ayu
+" colorscheme onedark
 
 let g:enable_bold_font = 1
 let g:enable_italic_font = 1
@@ -381,7 +383,7 @@ let g:hybrid_transparent_background = 1
 " let g:enable_bold_font = 1
 " let g:enable_italic_font = 1
 
-" Setup Terminal Colors For Neovim {{{
+" Setup Terminal Colors For Neovim
 " if has('nvim')
 "   " dark0 + gray
 "   let g:terminal_color_0 = "#282828"
@@ -414,15 +416,15 @@ let g:hybrid_transparent_background = 1
 "   " light4 + light1
 "   let g:terminal_color_7 = "#a89984"
 "   let g:terminal_color_15 = "#ebdbb2"
-" endif " }}}
-" }}}
-" Section: Local-Machine Config {{{
+" endif "
+"
+" Section: Local-Machine Config
 
 if filereadable($DOTFILES . "/nvim/init.local.vim")
   source $DOTFILES/nvim/init.local.vim
 endif
-" }}}
-" Section: General Configs  {{{
+"
+" Section: General Configs
 let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
 
 noremap <Up> <NOP>
@@ -434,4 +436,4 @@ autocmd BufEnter * set mouse=
 autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
 
 
-" }}}
+"
