@@ -57,8 +57,8 @@ set splitbelow
 set splitright
 "
 " Point to the Python executables in `asdf`
-let g:python_host_prog  = '/usr/bin/python'
-let g:python3_host_prog = '/usr/local/bin/python3'
+let g:python_host_prog  = '/usr/bin/python3 '
+let g:python3_host_prog = '/usr/bin/python3'
 
 "
 " Configure grep to use The Silver Searcher
@@ -124,7 +124,8 @@ nnoremap <leader>gt :call OpenInGitTower()<CR>
 call plug#begin()
 
 " UI
-Plug 'sandovalrr/ayu-vim'
+" Plug 'sandovalrr/ayu-vim'
+Plug 'ayu-theme/ayu-vim'
 Plug 'mhartington/oceanic-next'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'vim-airline/vim-airline'            " Handy info
@@ -144,7 +145,7 @@ Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/fzf',                      { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -154,6 +155,9 @@ Plug 'vim-scripts/ctags.vim'              " ctags related stuff
 Plug 'majutsushi/tagbar'
 Plug 'rbgrouleff/bclose.vim'              " Required by ranger.vim
 Plug 'francoiscabrol/ranger.vim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.x' }
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " File Navigation
 Plug 'vim-scripts/matchit.zip'            " More powerful % matching
@@ -178,9 +182,9 @@ Plug 'alvan/vim-closetag'
 Plug 'lifepillar/pgsql.vim'
 Plug 'chrisbra/Colorizer'
 Plug 'terryma/vim-multiple-cursors'
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'github/copilot.vim'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+" Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 " Git
 Plug 'tpope/vim-fugitive'                 " Git stuff in Vim
@@ -293,8 +297,8 @@ let g:ranger_replace_netrw = 1 " open ranger when vim open a directory
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 nnoremap <silent> + :exe "vertical resize +5"<CR>
 nnoremap <silent> - :exe "vertical resize -5"<CR>
-nnoremap <silent> <leader>+ :exe "resize +5"<CR>
-nnoremap <silent> <leader>- :exe "resize -5"<CR>
+nnoremap <silent> <Space>+ :exe "resize +5"<CR>
+nnoremap <silent> <Space>- :exe "resize -5"<CR>
 
 "*****************************************************************************
 "" Abbreviations
@@ -351,14 +355,25 @@ set completeopt-=preview
 "
 " Section: Theme
 
-" set termguicolors
-let ayucolor="mirage"
+set termguicolors
+if (empty($TMUX))
+  if (has("nvim"))
+    "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
+  "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
+  " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
 " set background=dark
 " colorscheme nova
 " Or if you have Neovim >= 0.1.5
-if (has("termguicolors"))
-  set termguicolors
-endif
+" if (has("termguicolors"))
+"   set termguicolors
+" endif
 
 " Theme
 syntax on
@@ -366,12 +381,13 @@ syntax on
 " let g:airline_theme = "mirage"
 " colorscheme hybrid_reverse
 " let ayucolor="dark"
-colorscheme ayu
-" colorscheme onedark
+" colorscheme ayu
+colorscheme onedark
 
 let g:enable_bold_font = 1
 let g:enable_italic_font = 1
 let g:hybrid_transparent_background = 1
+let g:onedark_terminal_italics = 1
 
 " let g:oceanic_next_terminal_bold = 1
 " let g:oceanic_next_terminal_italic = 1
@@ -434,6 +450,6 @@ noremap <Right> <NOP>
 autocmd BufEnter * set mouse=
 
 autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
-
-
+nnoremap <C-l> gt
+nnoremap <C-h> gT
 "

@@ -1,15 +1,4 @@
-# Configuration for Alacritty, the GPU enhanced terminal emulator.
-
-# Any items in the `env` entry below will be added as
-# environment variables. Some entries may override variables
-# set by alacritty itself.
 env:
-  # TERM variable
-  #
-  # This value is used to set the `$TERM` environment variable for
-  # each instance of Alacritty. If it is not present, alacritty will
-  # check the local terminfo database and use `alacritty` if it is
-  # available, otherwise `xterm-256color` is used.
   TERM: xterm-256color
 
 window:
@@ -34,8 +23,8 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 6
-    y: 6
+    x: 0
+    y: 0
 
   # Spread additional padding evenly around the terminal content.
   #dynamic_padding: false
@@ -49,7 +38,7 @@ window:
   # Values for `decorations` (macOS only):
   #     - transparent: Title bar, transparent background and title bar buttons
   #     - buttonless: Title bar, transparent background, but no title bar buttons
-  decorations: transparent
+  decorations: full
 
   startup_mode: Windowed
   # Startup Mode (changes require restart)
@@ -77,7 +66,7 @@ window:
   #
   # Override the variant of the GTK theme. Commonly supported values are `dark` and `light`.
   # Set this to `None` to use the default theme variant.
-  gtk_theme_variant: dark
+  # gtk_theme_variant: dark
 
 scrolling:
   # Maximum number of lines in the scrollback buffer.
@@ -101,86 +90,40 @@ scrolling:
 # tabspaces: 2
 
 # Font configuration
+# font:
+#   normal:
+#     family: OperatorMonoSSm Nerd Font
+#     style: Book Italic
+#   bold:
+#     family: Operator Mono SSm
+#     style: Book
+#   italic:
+#     family: Operator Mono SSm
+#     style: Book Italic
 font:
-  # Normal (roman) font face
   normal:
-    # Font family
-    #
-    # Default:
-    #   - (macOS) Menlo
-    #   - (Linux/BSD) monospace
-    #   - (Windows) Consolas
-    family: OperatorMonoSSm Nerd Font
-    # The `style` can be specified to pick a specific face.
-    style: Book Italic
-
-  # Bold font face
+    family: "OperatorMono Nerd Font"
+    style: "Book"
+    # family: "Hack Nerd Font Mono"
+    # style: Regular
   bold:
-    # Font family
-    #
-    # If the bold family is not specified, it will fall back to the
-    # value specified for the normal font.
-    family: Operator Mono SSm
-
-    # The `style` can be specified to pick a specific face.
-    style: Book
-
-  # Italic font face
+    family: "OperatorMono Nerd Font"
+    style: "Medium"
+    # family: "Hack Nerd Font Mono"
+    # style: Bold
   italic:
-    # Font family
-    #
-    # If the italic family is not specified, it will fall back to the
-    # value specified for the normal font.
-    family: Operator Mono SSm
-
-    # The `style` can be specified to pick a specific face.
-    style: Book Italic
-
-  # Bold italic font face
-  # bold_italic:
-    # Font family
-    #
-    # If the bold italic family is not specified, it will fall back to the
-    # value specified for the normal font.
-    # family: Dank Mono
-
-    # The `style` can be specified to pick a specific face.
-    # style: Italic
-
-  # Point size
-  size: 12.5
-
-  # Offset is the extra space around each character. `offset.y` can be thought of
-  # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
+    family: "OperatorMono Nerd Font"
+    # family: "Hack Nerd Font Mono"
+    style: "Book Italic"
+  bold_italic:
+    family: "OperatorMono Nerd Font"
+    # family: "Hack Nerd Font Mono"
+    style: Bold Italic
+  size: 24.0
   offset:
     x: 1
     y: 1
-
-  # Glyph offset determines the locations of the glyphs within their cells with
-  # the default being at the bottom. Increasing `x` moves the glyph to the right,
-  # increasing `y` moves the glyph upwards.
-  #glyph_offset:
-  #  x: 0
-  #  y: 0
-
-  # Thin stroke font rendering (macOS only)
-  #
-  # Thin strokes are suitable for retina displays, but for non-retina screens
-  # it is recommended to set `use_thin_strokes` to `false`
-  #
-  # macOS >= 10.14.x:
-  #
-  # If the font quality on non-retina display looks bad then set
-  # `use_thin_strokes` to `true` and enable font smoothing by running the
-  # following command:
-  #   `defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO`
-  #
-  # This is a global setting and will require a log out or restart to take
-  # effect.
-  use_thin_strokes: true
-
-# If `true`, bold text is drawn using the bright color variants.
-draw_bold_text_with_bright_colors: true
+# draw_bold_text_with_bright_colors: true
 
 # Colors (Noctis)
 colors:
@@ -218,7 +161,6 @@ colors:
   #   `- { index: 16, color: '0xff00ff' }`
   #
   #indexed_colors: []
-
 # Visual Bell
 #
 # Any time the BEL code is received, Alacritty "rings" the visual bell. Once

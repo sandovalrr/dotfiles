@@ -2,7 +2,7 @@
   "breadcrumbs.enabled": true,
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.cursorStyle": "underline",
-  "editor.fontFamily": "'Noto Mono', 'Courier New', monospace",
+  "editor.fontFamily": "'Operator Mono SSm', 'Courier New', monospace",
   "editor.fontSize": 13,
   "editor.fontWeight": "100",
   "editor.lineNumbers": "relative",
@@ -31,40 +31,29 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "vim.statusBarColorControl": true,
   "vim.useSystemClipboard": true,
-  "window.menuBarVisibility": "toggle",
   "window.titleBarStyle": "custom",
-  "workbench.activityBar.visible": true,
   "workbench.colorCustomizations": {
     "statusBar.background": "#5f0000",
     "statusBar.noFolderBackground": "#5f0000",
     "statusBar.debuggingBackground": "#5f0000"
   },
   "zenMode.hideStatusBar": false,
-  "tslint.run": "onSave",
-  "tslint.alwaysShowStatus": true,
   "editor.wordWrap": "on",
   "editor.minimap.enabled": false,
-  "jest.debugMode": true,
   "vim.foldfix": true,
   "vim.ignorecase": false,
   "vim.sneakUseIgnorecaseAndSmartcase": true,
-  "tslint.validateWithDefaultConfig": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "vim.neovimPath": "/usr/local/bin/nvim",
+  "vim.neovimPath": "/opt/homebrew/bin/nvim",
   "editor.renderWhitespace": "all",
   "vim.enableNeovim": true,
   "workbench.iconTheme": "material-icon-theme",
-  "tslint.ignoreDefinitionFiles": true,
-  "workbench.colorTheme": "Noctis Obscuro",
+  "workbench.colorTheme": "Ayu Mirage",
   "debug.internalConsoleOptions": "neverOpen",
-  // "[typescriptreact]": {
-  //   "editor.defaultFormatter": "esbenp.prettier-vscode"
-  // },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.fontLigatures": true,
-  "terminal.integrated.rendererType": "dom",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
@@ -75,18 +64,18 @@
     "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[javascriptreact]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "typescript.tsdk": "./node_modules/typescript/lib",
   "editor.largeFileOptimizations": false,
   "go.formatTool": "goimports",
   "vim.leader": "/",
   "eslint.migration.2_x": "off",
   "eslint.alwaysShowStatus": true,
   "editor.suggestSelection": "first",
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "files.exclude": {
     "**/.classpath": true,
     "**/.project": true,
@@ -116,5 +105,20 @@
   "emmet.includeLanguages": {
     "ejs": "html",
   },
-  "window.zoomLevel": 1
+  "rapidapi.requests.timeout": 1500000,
+  "testing.autoRun.mode": "rerun",
+  "jest.autoRun": {},
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": false,
+    "plaintext": false,
+    "markdown": true,
+    "scminput": false
+  },
+  "[python]": {
+    "editor.formatOnType": true,
+  },
+  "python.defaultInterpreterPath": "/opt/homebrew/bin/python3",
+  "python.terminal.activateEnvironment": true,
+  "window.zoomLevel": 2
 }

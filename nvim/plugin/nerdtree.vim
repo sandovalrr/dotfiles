@@ -32,10 +32,11 @@ let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
 let g:NERDTreeShowBookmarks=1
 let g:nerdtree_tabs_focus_on_files=1
 let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
+" let NERDTreeMapOpenInTab='<ENTER>'
 let g:NERDTreeWinSize = 50
 let NERDTreeShowHidden=1
 let NERDTreeAutoDeleteBuffer = 1
-let NERDTreeMinimalUI = 1
+let NERDTreeMinimalUI = 0
 let NERDTreeDirArrows = 1
 
 let g:NERDTreeGitStatusWithFlags = 1

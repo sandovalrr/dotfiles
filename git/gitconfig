@@ -123,10 +123,10 @@
   separator = red bold
   linenumber = normal
 
-; [push]
+[push]
 ;   # 'git push' will push the current branch to its tracking branch
 ;   # the usual default is to push all branches
-;   default = tracking
+  default = current
 
 ; [merge]
 ;   tool = vimdiff
@@ -179,3 +179,4 @@
   insteadOf = https://bitbucket.org/tredium
 [url "git@bitbucket.org:tredium"]
   insteadOf = https://git.tredium.com/pharmsys
+
