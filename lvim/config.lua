@@ -27,6 +27,8 @@ lvim.keys.normal_mode["<C-j>"] = false
 lvim.keys.normal_mode["<C-k>"] = false
 lvim.keys.normal_mode["<C-l>"] = false
 
+lvim.keys.normal_mode["<C-f>"] = ":Telescope live_grep<CR>"
+
 vim.opt.relativenumber = true -- relative line numbers
 -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 -- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
@@ -149,28 +151,10 @@ formatters.setup {
     -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
     -- extra_args = { "--print-with", "100" },
     ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
-    filetypes = { "typescript", "typescriptreact" },
+    filetypes = { "typescript", "typescriptreact", "css", "lua_ls", "json", "html", "javascript", "javascriptreact",
+      "markdown", "yaml" },
   },
 }
-
--- -- set additional linters
--- local linters = require "lvim.lsp.null-ls.linters"
--- linters.setup {
---   { command = "flake8", filetypes = { "python" } },
---   {
---     -- each linter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
---     command = "shellcheck",
---     ---@usage arguments to pass to the formatter
---     -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
---     extra_args = { "--severity", "warning" },
---   },
---   {
---     command = "codespell",
---     ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
---     filetypes = { "javascript", "python" },
---   },
--- }
-
 -- Additional Plugins
 lvim.plugins = {
   {
@@ -229,26 +213,10 @@ lvim.builtin.cmp.mapping["<C-e>"] = function(fallback)
   end
 end
 
--- lvim.builtin.cmp.mapping["<leader>q"] = function()
---   cmp.mapping.abort()
---   utils.format()
--- end
-
--- Autocommands (https://neovim.io/doc/user/autocmd.html)
--- vim.api.nvim_create_autocmd("BufEnter", {
---   pattern = { "*.json", "*.jsonc" },
---   -- enable wrap mode for json files only
---   command = "setlocal wrap",
--- })
--- vim.api.nvim_create_autocmd("FileType", {
---   pattern = "zsh",
---   callback = function()
---     -- let treesitter use bash highlight for zsh files as well
---     require("nvim-treesitter.highlight").attach(0, "bash")
---   end,
--- })
---
 require('ayu').setup({
-  mirage = true, -- Set to `true` to use `mirage` variant instead of `dark` for dark background.
+  mirage = true,  -- Set to `true` to use `mirage` variant instead of `dark` for dark background.
   overrides = {}, -- A dictionary of group names, each associated with a dictionary of parameters (`bg`, `fg`, `sp` and `style`) and colors in hex.
-}
+})
+
+lvim.keys.normal_mode["gt"] = ":BufferLineCycleNext<CR>"
+lvim.keys.normal_mode["gT"] = ":BufferLineCyclePrev<CR>"
