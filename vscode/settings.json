@@ -33,9 +33,9 @@
   "vim.useSystemClipboard": true,
   "window.titleBarStyle": "custom",
   "workbench.colorCustomizations": {
-    "statusBar.background": "#5f0000",
-    "statusBar.noFolderBackground": "#5f0000",
-    "statusBar.debuggingBackground": "#5f0000"
+    "statusBar.background": "#005f5f",
+    "statusBar.noFolderBackground": "#005f5f",
+    "statusBar.debuggingBackground": "#005f5f"
   },
   "zenMode.hideStatusBar": false,
   "editor.wordWrap": "on",
@@ -48,7 +48,7 @@
   "editor.renderWhitespace": "all",
   "vim.enableNeovim": true,
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.colorTheme": "Ayu Mirage",
+  "workbench.colorTheme": "Noctis Obscuro",
   "debug.internalConsoleOptions": "neverOpen",
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -120,5 +120,7 @@
   },
   "python.defaultInterpreterPath": "/opt/homebrew/bin/python3",
   "python.terminal.activateEnvironment": true,
-  "window.zoomLevel": 2
+  "window.commandCenter": false,
+  "workbench.layoutControl.enabled": false,
+  "window.zoomLevel": 3
 }

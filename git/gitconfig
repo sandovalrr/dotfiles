@@ -177,6 +177,3 @@
 ;   insteadOf = https://git.tredium.com/scm
 [url "git@bitbucket.org:tredium"]
   insteadOf = https://bitbucket.org/tredium
-[url "git@bitbucket.org:tredium"]
-  insteadOf = https://git.tredium.com/pharmsys
-
